@@ -1,0 +1,28 @@
+---
+format: 
+  revealjs:
+    theme: [serif, custom.scss]
+    scrollable: true
+    logo: media/chopr_logo.png
+    footer: Children's Hospital of Philadelphia (CHOP) R User Group
+    css: styles.css
+---
+
+::: {.columns }
+::: {.column width="20%"}
+![](media/chopr_logo.png)
+:::
+
+::: {.column width="80%"}
+Introduction to R for Clinical Data
+
+Presented by the Children's Hospital of Philadelphia (CHOP) R User Group
+:::
+:::
+
+Slide decks:
+
+* [Welcome](https://joy-payton-chop.quarto.pub/intro-r-workshop/welcome)
+* [Part 1: Introduction](https://joy-payton-chop.quarto.pub/intro-r-workshop/introduction)
+* [Part 2: Visualize](https://joy-payton-chop.quarto.pub/intro-r-workshop/visualize)
+* [Part 3: Transform](https://joy-payton-chop.quarto.pub/intro-r-workshop/transform)

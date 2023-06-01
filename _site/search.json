@@ -1,0 +1,1010 @@
+[
+  {
+    "objectID": "transform.html#subsetting-data",
+    "href": "transform.html#subsetting-data",
+    "title": "",
+    "section": "Subsetting Data",
+    "text": "Subsetting Data\n\nOften, you have a large data frame but want to create a graph or analyze data from only a small part of it. The dplyr package, part of the larger tidyverse set of packages, works great for this purpose.\nLet’s look at how you can subset a data frame (choose only certain columns and/or rows) by using dplyr."
+  },
+  {
+    "objectID": "transform.html#subsetting-columns-vs-rows",
+    "href": "transform.html#subsetting-columns-vs-rows",
+    "title": "",
+    "section": "Subsetting Columns vs Rows",
+    "text": "Subsetting Columns vs Rows\n\n\nselect()\n\n\n\n\n\n\n\n\n\n\nfilter()\n\n\n\n\n\n\n\n\n\ndplyr provides two functions for subsetting data frames: select() for subsetting columns, and filter() for subsetting rows:\nselect() reshapes data so that it includes only the columns you specify.\nfilter() reshapes data so that it includes only the rows that meet your conditions."
+  },
+  {
+    "objectID": "transform.html#select",
+    "href": "transform.html#select",
+    "title": "",
+    "section": "select()",
+    "text": "select()\nselect(data_frame, ...)\n\nLet’s look at select() first. The select() function extracts columns from a data frame, using the column name(s) as argument(s).\nselect() takes a data frame as its first argument. After that it takes any number of additional arguments that specify the names of the columns that you want to pick.\nWe extract columns by name with code that looks like this, and we replace the three dots with the names of the columns we want to keep."
+  },
+  {
+    "objectID": "transform.html#select-1",
+    "href": "transform.html#select-1",
+    "title": "",
+    "section": "select()",
+    "text": "select()\nselect(covid_testing, mrn, last_name)\n\n\nLet’s examine the code on this slide.\nThis select statement will take the data frame covid_testing, and return a new data frame that only has the columns mrn and last_name, shown here in blue to help you visualize this transformation.\nAn important point to note here is that select will not modify the original data frame but simply returns the altered data frame you asked for, without saving it automatically.\nIf you write the select statement like this it will simply print out the result in the console or in your R Markdown document. If you want to capture the modified data frame you need to assign it to a named object."
+  },
+  {
+    "objectID": "transform.html#your-turn-1",
+    "href": "transform.html#your-turn-1",
+    "title": "",
+    "section": "Your Turn #1",
+    "text": "Your Turn #1\nWhich of the following will select the first_name column from the covid_testing data frame and capture the result in a data frame named newdata?\nA) newdata = select(first_name, covid_testing)\nB) newdata <- select(covid_testing, first_name)\nC) select(newdata, covid_testing, first_name)\nD) newdata <- select(covid_testing, First_Name)\nE) Both B and D\nType your response in the chat!\n\n\n\n−+\n01:00\n\n\n\n\nGreat, we have some folks saying , others are suggesting . The answer is B.\nA isn’t correct because the arguments are in the wrong order. The first argument in the tidyverse functions we’re studying today is always going to be the data frame you want to work with. That means the first argument should be covid_testing.\nC isn’t correct because you have to use the assignment arrow to save the new, one-column-only data frame to an object called newdata. You don’t pass the name you want to apply to the object as an argument.\nD isn’t right because capitalization matters! First name with a capital F is not the same as first name with a lower case f.\nSo E is also clearly incorrect."
+  },
+  {
+    "objectID": "transform.html#filter",
+    "href": "transform.html#filter",
+    "title": "",
+    "section": "filter()",
+    "text": "filter()\nfilter(data_frame, ...)\n\nOne of the most important dplyr functions to know about is filter(). filter() extracts rows, and it does that based on logical criteria, or a condition that can be evaluated to be true (keep that row as part of our subset) or false (don’t keep that row).\nLike select(), filter() takes a data frame as its first argument. The second argument is a condition or logical test. R then performs that logical test on each row of the dataset and returns all rows in which the logical test was true.\nTo extract rows that meet logical criteria, we write code that looks like this, and we replace the three dots with the condition we want to test for each row."
+  },
+  {
+    "objectID": "transform.html#filter-1",
+    "href": "transform.html#filter-1",
+    "title": "",
+    "section": "filter()",
+    "text": "filter()\nfilter(covid_testing, mrn == 5000083)\n\n\nTo give you an example: the logical test here is whether or not the mrn value is equal to 5 00 00 83. This is false for the first three rows. In these rows, the mrn value is something else. For the 4th row, however, it is true that the mrn value is equal to 5 00 00 83.\nThis filter statement will return a data frame that only contains the 4th row, in which the logical condition is true, as shown on the right.\nNotice that we’re using a double equals here. That’s very important!"
+  },
+  {
+    "objectID": "transform.html#a-potential-pitfall",
+    "href": "transform.html#a-potential-pitfall",
+    "title": "",
+    "section": "A Potential Pitfall!",
+    "text": "A Potential Pitfall!\n\nError: Problem with filter() input ..1. x Input ..1 is named. ℹ This usually means that you’ve used = instead of ==.\n\nOR\n\nError: unexpected ‘=’\n\nOR\n\ninvalid (do_set) left-hand side to assignment\n\n\nOne common issue to be aware of is the difference between the single equals and the double equals operators.\nIn R, using a single equals sign assigns a value. It demands, “make these things equal.”\nThe double equals sign does not assign, but compares. It asks “are these things equal?”.\nThat’s why we use double equals in the context of a logical test that compares the left hand side, e.g. mrn, with the right hand side, e.g. 5000083, to check whether or not they are the same.\nIf you use the wrong kind of equals, you’ll get an error. This is a very common mistake, and one you’re almost guaranteed to accidentally commit at one point or another! This is what some of those scary errors look like:"
+  },
+  {
+    "objectID": "transform.html#logical-operators",
+    "href": "transform.html#logical-operators",
+    "title": "",
+    "section": "Logical Operators",
+    "text": "Logical Operators\n\n\n\n\n\n\n\n\nlogical expression\nmeans\nexample\n\n\n\n\nx < y\nless than\npan_day < 10\n\n\nx > y\ngreater than\nmrn > 5001000\n\n\nx == y\nequal to\nfirst_name == last_name\n\n\nx <= y\nless than or equal to\nmrn <= 5000000\n\n\nx >= y\ngreater than or equal to\npan_day >= 30\n\n\nx != y\nnot equal to\ntest_id != \"covid\"\n\n\nis.na(x)\na missing value\nis.na(clinic_name)\n\n\n!is.na(x)\nnot a missing value\n!is.na(pan_day)\n\n\n\n\nHere are some important logical operators to know about. They will all come in handy when you’re filtering rows of a data frame. x and y each represent expressions, which could be column names or constant values or a combination thereof.\nWe’ve already seen the double equals. There are also the less than or and greater than operators. These operators also come as “or equal to” versions.\nUse exclamation point equals (some people say “bang equals”) if you want to select rows in which a value is not equal to another value.\nis.na() is how you can test for missing values (NA in R). This comes in handy when you want to remove missing values from your data, which we’ll see later."
+  },
+  {
+    "objectID": "transform.html#your-turn-2",
+    "href": "transform.html#your-turn-2",
+    "title": "",
+    "section": "Your Turn #2",
+    "text": "Your Turn #2\nWrite a filter() statement that returns a data frame containing only the rows from covid_testing in which the last_name column is NOT equal to “stark”.\n(You don’t have to capture the returned data frame)\nType your response in the chat!\n\n\n\n−+\n01:00\n\n\n\n\nFor this, I just want you to think about how to write this, you don’t have to test it in R. Write a filter statement that will give us a data frame with no starks in it. Read this over, and give it a shot!."
+  },
+  {
+    "objectID": "transform.html#your-turn-3",
+    "href": "transform.html#your-turn-3",
+    "title": "",
+    "section": "Your Turn #3",
+    "text": "Your Turn #3\nWhich of these would successfully filter the covid_testing data frame to only tests with positive results?\nA) filter(covid_testing, result == positive)\nB) filter(covid_testing, result = “positive”)\nC) filter(covid_testing, result == “positive”)\nD) filter(covid_testing, positive == “result”)\n\n\n\n−+\n01:00\n\n\n\n\nHere we have another multiple choice to see if you’re on your toes. Only one of these is correct? Which one? Post what you think in chat.\n\nA is wrong because “positive” is a character string (it’s not a number or a logical value such as TRUE/FALSE). B is wrong because you’re trying to do a comparison with a single equals. C is correct! D is wrong because it flips the positions of the comparison; the column name goes to the left and the comparator on the right."
+  },
+  {
+    "objectID": "transform.html#the-pipe-operator",
+    "href": "transform.html#the-pipe-operator",
+    "title": "",
+    "section": "The Pipe Operator %>%",
+    "text": "The Pipe Operator %>%"
+  },
+  {
+    "objectID": "transform.html#the-pipe-operator-1",
+    "href": "transform.html#the-pipe-operator-1",
+    "title": "",
+    "section": "The Pipe Operator %>%",
+    "text": "The Pipe Operator %>%\nThe pipe operator we’ll use is %>%\n(You’ll start to sometimes see |>, in R 4.1.0 forward)\n\nOne of the most powerful concepts in the tidyverse suite of packages is the pipe operator, which is written in two possible ways:\n\npercent, greater than, percent (%>%) (this is the original pipe which gets included as part of dplyr and tidyverse)\nvertical pipe, greater than (|>) (this is a newer option, and is now “native”, meaning it comes from base R, if you’re using R version 4.1.0 or later)\n\nWe’re going to use the original pipe, for two reasons:\n\nThere are very specific occasions, which we won’t run into today, in which the older pipe and the newer pipe do different things.\nWe think the older pipe is still going to be what you see most, at least for maybe another year.\n\nStill, we want you to know that a newer version of the pipe exists and you might see it or use it in the future! It works in an almost identical way."
+  },
+  {
+    "objectID": "transform.html#the-pipe-operator-2",
+    "href": "transform.html#the-pipe-operator-2",
+    "title": "",
+    "section": "The Pipe Operator",
+    "text": "The Pipe Operator\n\n\nPasses the object on the left as the first argument to the function on the right\ncovid_testing %>% filter(pan_day <= 10) is equivalent to filter(covid_testing, pan_day <= 10)\nOR, if you in the future use the “new” pipe:\ncovid_testing |> filter(pan_day <= 10) is equivalent to filter(covid_testing, pan_day <= 10)\n\n\nBoth pipe operators pass the object on its left as the first argument to the function on its right.\nIn this workshop, we’ll use the “original” pipe (that’s the one that has percent greater than percent) in code examples and quiz questions, because we think this is the one you’ll see the most in code that your coworkers share with you or you find in online examples. We’re also running on the latest stable version of R that ships with our server software, which is 3.6. This will gradually change, and when we get 4.1.0 as the default R version, we’ll likely change these materials to reflect that.\nThat means, and I’m going to read the top line of code in blue, that the statement “covid_testing, pipe, filter such that pan_day is less than or equal to ten” is equivalent to “filter the covid_testing data frame such that pan day is less than or equal to ten”. Those two lines of code are equivalent.\nIn both cases we’re taking the covid_testing data frame, passing it as the first argument to the filter() function, and adding a condition that we’re filtering by. In our case that condition is pan_day less than or equal to 10.\nWe could say the same thing of the second line of blue code on your screen which uses the newer pipe.\nThis is the last time you’ll see that new pipe today… from here out we’re going to use the old favorite percent greater than percent."
+  },
+  {
+    "objectID": "transform.html#your-turn-4",
+    "href": "transform.html#your-turn-4",
+    "title": "",
+    "section": "Your Turn #4",
+    "text": "Your Turn #4\nRewrite the following statement with a pipe:\nselect(mydata, first_name, last_name)\nType the answer in the chat!\n\n\n\n−+\n01:00\n\n\n\n\nOK, I want to see if you grasp this concept, as it’s pretty important, moving forward. How would you rewrite the statement on your screen, select mydata comma first name comma last name, and use the pipe syntax instead? Share what you think the answer is.\n…\nYep, that’s exactly right! You’d write mydata, the pipe symbol, and then select first name comma last name. Any questions on that?"
+  },
+  {
+    "objectID": "transform.html#create-or-update-columns",
+    "href": "transform.html#create-or-update-columns",
+    "title": "",
+    "section": "Create or Update Columns",
+    "text": "Create or Update Columns\n\nLet’s say you want to add a new column to your data frame, or update a column by changing it in some way (say, convert kilograms to pounds). dplyr has a function for that, too!"
+  },
+  {
+    "objectID": "transform.html#mutate",
+    "href": "transform.html#mutate",
+    "title": "",
+    "section": "mutate()",
+    "text": "mutate()\nCreate new or updated, optionally calculated columns.\n\n\nmutate() is an extremely useful dplyr function, and you can use it to make new variables / columns. That’s what we’ll use it for here. You can also use mutate() to change existing columns (say, turn an entire column lowercase or round or scale a numeric value).\nLike all dplyr functions, mutate() takes a data frame as its first argument. After that, you tell it what to name the new column and what should be in it. This is done using name-value expressions.\nIn name-value expression, you have:\n\na name\nan equals sign (=), and\na value"
+  },
+  {
+    "objectID": "transform.html#mutate-1",
+    "href": "transform.html#mutate-1",
+    "title": "",
+    "section": "mutate()",
+    "text": "mutate()\nCreate new or updated, optionally calculated columns.\n\n\nThe name is the name of the column that you’d like to create or update."
+  },
+  {
+    "objectID": "transform.html#mutate-2",
+    "href": "transform.html#mutate-2",
+    "title": "",
+    "section": "mutate()",
+    "text": "mutate()\nCreate new or updated, optionally calculated columns.\n\n\nThen you have a single equals sign - because you’re assigning a value (=), you’re not asking whether two things are equal (==)."
+  },
+  {
+    "objectID": "transform.html#mutate-3",
+    "href": "transform.html#mutate-3",
+    "title": "",
+    "section": "mutate()",
+    "text": "mutate()\nCreate new or updated, optionally calculated columns.\n\n\nThen you have value. This can be a constant, e.g. 100, or a calculation that involves data from already existing columns."
+  },
+  {
+    "objectID": "transform.html#mutate-4",
+    "href": "transform.html#mutate-4",
+    "title": "",
+    "section": "mutate()",
+    "text": "mutate()\nmutate(covid_testing,\n     col_rec_tat_mins = col_rec_tat * 60)\n\n\nFor example, let’s take a look at one of the columns of covid_testing that we haven’t looked at yet in this workshop: col_rec_tat.\nThis column contains the specimen collection (“col”) to received-in-lab (“rec”) turn around time (“tat”), in hours. Let’s create a new column, that contains the same data, but in minutes instead of hours.\nTo do so, you write mutate(covid_testing, followed by a name-value expression. The left part is the new column name, which we could choose to be col_rec_tat_mins. Then we have a single equals sign. Then the calculation, which is col_rec_tat times 60."
+  },
+  {
+    "objectID": "transform.html#mutate-5",
+    "href": "transform.html#mutate-5",
+    "title": "",
+    "section": "mutate()",
+    "text": "mutate()\nmutate(covid_testing,\n     ct_value = round(ct_value))\n\nIf, on the other hand, you wanted to change an existing column using mutate(), you could do it like this. This command takes the column ct_value, which currently holds decimal values, rounds it to the nearest whole number, and then uses that as the new set of values for ct_value."
+  },
+  {
+    "objectID": "transform.html#your-turn-5",
+    "href": "transform.html#your-turn-5",
+    "title": "",
+    "section": "Your Turn #5",
+    "text": "Your Turn #5\nOpen 03 – Transform.qmd and work through the exercises.\nClick “yes”  when you are finished.\n\n\n\n−+\n05:00\n\n\n\n\nNow let’s do some hands-on work. Please go to your “exercises” folder and open the 03 transform file. You’ll have five minutes to go through the instructions in that file!\n…\nEveryone ready? I’m going to go through the solutions very quickly. In this first exercise, I’ll start with covid_testing, then add a pipe, and then use my filter, making sure I use the double equal. So clinic_name == “picu”. Finally, I’ll add another pipe and then keep only the columns I care about, using select(rec_ver_tat, pan_day).\nThen I’ll use mutate without a pipe and make a new column composed of the sum of two existing columns. I’ll do it like this: mutate covid_testing comma total_tat equals col_rec_tat plus rec_ver_tat.\nAnd finally, I’ll take the data frame name out of that mutate and use it as the start of a pipeline. So I have covid_testing, then, mutate, total_tat equals col_rec_tat plus rec_ver_tat."
+  },
+  {
+    "objectID": "transform.html#recap",
+    "href": "transform.html#recap",
+    "title": "",
+    "section": "Recap",
+    "text": "Recap\n\n\n\n\n\n\n\n\nselect() subsets columns by name\n\n\n\n\n\n\n\n\n\n\nfilter() subsets rows by a logical condition\n\n\n\n\n\n\n\n\n\n\nmutate() creates new calculated columns or changes existing columns\n\n\n\n\n\n\n\n\n\n\nUse the pipe operator %>% to combine dplyr functions into a pipeline\n\n\n\nTo recap, dplyr is a package you can load in R that provides a grammar for transforming data frames. Some of the key dplyr functions are:\nselect(), which subsets columns by name filter(), which subsets rows by a logical condition , and mutate(), which creates new calculated columns or changes existing columns\nAdditionally, dplyr and other tidyverse packages make use of the pipe operator, which can be used to string together dplyr functions into a pipeline that performs several transformations."
+  },
+  {
+    "objectID": "transform.html#what-else",
+    "href": "transform.html#what-else",
+    "title": "",
+    "section": "What Else?",
+    "text": "What Else?"
+  },
+  {
+    "objectID": "transform.html#cheatsheet-more-dplyr-functions",
+    "href": "transform.html#cheatsheet-more-dplyr-functions",
+    "title": "",
+    "section": "Cheatsheet (more dplyr functions!)",
+    "text": "Cheatsheet (more dplyr functions!)\n\n\nRStudio creates and distributes a number of cheatsheets for various purposes. You can find them by clicking in the Help menu in RStudio – try that now! Here’s an image of the dplyr cheatsheet. As you can see, there are lots of other funtions that dplyr offers.\nOther dplyr functions include arrange(), distinct(), group_by() (which is especially helpful when combined with summarize()), and many more!"
+  },
+  {
+    "objectID": "transform.html#what-next",
+    "href": "transform.html#what-next",
+    "title": "",
+    "section": "What Next?",
+    "text": "What Next?\n\nSo this brings us to the end of the workshop! One of the most frequent questions we get is what can I do to keep learning R after the workshop. We have a few suggestions for that."
+  },
+  {
+    "objectID": "transform.html#access-your-own-r-and-rstudio",
+    "href": "transform.html#access-your-own-r-and-rstudio",
+    "title": "",
+    "section": "Access Your Own R and RStudio!",
+    "text": "Access Your Own R and RStudio!\n\n\n\n\n\n\n\nhttps://arcus.github.io/intro-to-r-for-clinicians-chop\n\nDepending on where in CHOP you work, you might have access to resources that CHQA offers, like Marx or CHOP’s RStudio Connect. If you work in Research at CHOP or if you work outside of CHOP, you may want to download R and RStudio to your own computer. If it’s a work computer, you might have to get IS to install this software for you.\nAlso, if you’d like to practice with the materials of the course on your own computer, the course website has instructions on how you can download them."
+  },
+  {
+    "objectID": "transform.html#chop-r-user-group",
+    "href": "transform.html#chop-r-user-group",
+    "title": "",
+    "section": "CHOP R User Group",
+    "text": "CHOP R User Group\n\n\n\n\nhttps://bit.ly/chopRusers\n\n\n\nThe next thing that we recommend is to become part of a community of practice. The best way to do that is to join the CHOP R User group (which is also open to Penn folks). I can’t overstate the importance of having a place to go to ask for help when you start coding. The CHOP R User group has more than 400 members from all departments.\nThis is great place to network with other Rusers, get help with coding problems, and learn about new packages, webinars, and conferences. If you are CHOP or Penn affiliated, please go to the bit.ly address now and sign up to be part of our mailing list and Slack!\nWe also have semi-regular meetings, and are always looking for new people to present short “lightning talks” about something they’ve been working on, a cool new package they’ve discovered, or really anything related to their experience with R.\nWe welcome talks from a variety of experience levels, so as you continue to get your feet wet with R, consider whether there’s something you’d be open to presenting about! Either way, we hope you join us for our next meeting, which will be shared via the CHOPR email distribution list as well as in our Slack."
+  },
+  {
+    "objectID": "transform.html#participate-in-tidy-tuesday",
+    "href": "transform.html#participate-in-tidy-tuesday",
+    "title": "",
+    "section": "Participate in Tidy Tuesday",
+    "text": "Participate in Tidy Tuesday\n\n\nThe aforementioned R4DS community has an initiative known as “Tidy Tuesday” – each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter.\nIf you do end up participating, we’d love to hear about it in the CHOPR slack!"
+  },
+  {
+    "objectID": "transform.html#participate-in-improve-this-workshop",
+    "href": "transform.html#participate-in-improve-this-workshop",
+    "title": "",
+    "section": "Participate in / Improve This Workshop",
+    "text": "Participate in / Improve This Workshop\n\n\nThis work belongs to the CHOP R User Group, and for those of you who are CHOP or Penn affiliated, we hope you’ll consider helping us. We need additional instructors, TAs, Zoomologists, and other helpers to be able to keep doing this workshop.\nWe’d like to be able to do more advanced workshops, too, but until we get additional helpers, we can’t move forward with that. If you’re interested in participating, please reach out to either of the instructors or to Joy, and we’ll coordinate with you."
+  },
+  {
+    "objectID": "transform.html#thank-you",
+    "href": "transform.html#thank-you",
+    "title": "",
+    "section": "Thank You!",
+    "text": "Thank You!\n\nHelpers\nLearners\n\nPlease, please, fill out the final survey we send out, it’s a concrete way to show your gratitude!\n\nAt this point, I would like to thank all the helpers: instructors, TAs, Zoomologists.\nI’d also like to thank you for your participation!\n** So to give them, and you, a round of virtual applause please click the “yes” button or another reaction button, like the party hat or the clapping hands, one last time!\n\n\n\n\nR/Medicine 2023"
+  },
+  {
+    "objectID": "welcome.html#tech-check",
+    "href": "welcome.html#tech-check",
+    "title": "",
+    "section": "Tech Check",
+    "text": "Tech Check\n\nWe suggest using the Chrome web browser.\nIf you haven’t already, please sign up for a free account at https://posit.cloud."
+  },
+  {
+    "objectID": "welcome.html#todays-presenters",
+    "href": "welcome.html#todays-presenters",
+    "title": "",
+    "section": "Today’s Presenters",
+    "text": "Today’s Presenters\n\n\n\n\n\n\n\n\nAkira Di Sandro\n\n\n\n\n\n\nRich Hanna\n\n\n\n\n\n\n\n\nAdya Maddox\n\n\n\n\n\n\nJennifer Uzokwe\n\n\n\n\nToday’s presenters include me, Akira Di Sandro, as well as Rich Hanna, Adya (Uh-dee-ya) Maddox, and Jennifer Uzokwe. We are all R users who have participated in this workshop before, as learners and as TAs, and we decided the time was right to become presenters. If you have a good experience today and want to help make it possible for your colleagues to also attend an R Workshop, we encourage you to consider volunteering next time to be a TA or a presenter!"
+  },
+  {
+    "objectID": "welcome.html#introducing-the-helpers",
+    "href": "welcome.html#introducing-the-helpers",
+    "title": "",
+    "section": "Introducing the Helpers!",
+    "text": "Introducing the Helpers!\n“Zoomologist” Joy Payton\nTeaching Assistants:\n\nRoni Devassy\nStacy Guzman\nWes Wilson\nJason Xu\nKiley Yeaman\n\nSpecial Thanks to:\n\nStephan Kadauke, MD, PhD, originator of many of these materials.\nOur partners at University of Botswana\n\n\nAnd we’re fortunate to have a number of helpers for the course. Joy Payton is a cofounder of the CHOP R User Group and she leads a group of data educators in CHOP’s Research Institute. Joy is happy to be behind the scenes today helping with our videoconferencing needs. She’ll be looking at and responding to the chat window, so feel free to ask her for help!\nWe have several great Teaching Assistants, as well, including the folks whose names you see here. They will be helping learners out one on one, so if you’re struggling, please reach out in chat and Joy will connect you with a TA and put you in a breakout room so you can get one on one help.\nThese materials were originally developed by Stephan Kadauke. He is an Assistant Professor of Pathology and Laboratory Medicine here at CHOP and co-directs the Cell and Gene Therapy Lab. He is also one of the co-founders of the CHOP R User Group and has been a big advocate for the wider adoption of R at CHOP.\nFinally, we’re very excited to have our international partners from the University of Botswana attend for the second time. Thank you for staying past your normal working hours to participate in this workshop with us!"
+  },
+  {
+    "objectID": "welcome.html#orientation-to-the-technology",
+    "href": "welcome.html#orientation-to-the-technology",
+    "title": "",
+    "section": "Orientation to the Technology",
+    "text": "Orientation to the Technology\n\nAfter several years of pandemic, many of us are very familiar with Zoom and tools like it. Still, let’s briefly go over how we’ll use our technology, which includes Zoom."
+  },
+  {
+    "objectID": "welcome.html#main-session-vs-breakout-rooms",
+    "href": "welcome.html#main-session-vs-breakout-rooms",
+    "title": "",
+    "section": "Main Session vs Breakout Rooms",
+    "text": "Main Session vs Breakout Rooms\n\n\n\n\nWebinar-style\n100+ participants\nMic off\nCamera off\n\n\n\n\nMeeting-style\n10-15 participants / room\nMic on\nCamera optional\n\n\n\n\nThe main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.\n** We will also take advantage of breakout rooms, which are a feature of Zoom that allows more of a meeting-style kind of conferencing. We will use breakout rooms for two purposes: for one, we’ll have a small number of group exercises for which we’ll break you guys up into groups of 10-15, and you’ll have the opportunity to talk to each other. We also encourage you to turn on your camera, if you’re are comfortable, but that’s completely up to you. We won’t record breakout sessions. The other purpose of breakout rooms will be to get you one-on-one help by one of the TAs if you are stuck or have some kind of technical problem."
+  },
+  {
+    "objectID": "welcome.html#non-verbal-feedback",
+    "href": "welcome.html#non-verbal-feedback",
+    "title": "",
+    "section": "Non-Verbal Feedback",
+    "text": "Non-Verbal Feedback\nThe “Yes, go ahead” feedback with the check mark is important today!\n\n\nWe will make heavy use of the Non-verbal Feedback functionality of Zoom. At various points, we presenters will ask you to click “Yes” to let us know we can keep going. What I mean by that is to click the green circle with the check mark in the Participants window. Go ahead and find that “Reactions” section of your Zoom screen now. We’ll ask you to use it in just a few moments."
+  },
+  {
+    "objectID": "welcome.html#chat-window",
+    "href": "welcome.html#chat-window",
+    "title": "",
+    "section": "Chat Window",
+    "text": "Chat Window\n\n\n\n\nChat is the way we ask for help here.\n\n\n\nThe primary purpose of the Chat window, for this course, is to ask for help if you get stuck with a technical issue. If you don’t have a problem that someone is helping you with, you do not need to monitor the chat window to follow the course. I will also occasionally ask you to write the answer to a question in the chat.\nPlease note that when I’m presenting, I can’t also monitor the chat at the same time, so please don’t send me private messages. Instead, post to Everyone, briefly describing the problem you have, and you will get help by one of our TAs.\nI also want to set expectations for help here. If you have a technical problem please use the chat to get help. But if you have questions about the material, or how to solve a problem you have that’s related to what we’re talking about at the moment, I encourage you to write it down, and ask during the breaks, or after the workshop."
+  },
+  {
+    "objectID": "welcome.html#your-turn-1",
+    "href": "welcome.html#your-turn-1",
+    "title": "",
+    "section": "Your Turn #1",
+    "text": "Your Turn #1\nClick the “yes” button (green check) in the Participants window. Then tell us your location (city, country) in the Chat window.\n\n\n\n−+\n01:00\n\n\n\n\nThis brings us to the first interactive exercise! In the “Reactions” section of Zoom, please click on the “yes” button (the green button with a check mark). When you do this, it tells us as presenters that you’re there, you’re listening, and you’re ready to continue.\nAlso, please tell us who you are! In the chat window, please tell us where you’re joining us from.\nWe’ll give you about one minute to do this exercise."
+  },
+  {
+    "objectID": "welcome.html#orientation-to-the-course",
+    "href": "welcome.html#orientation-to-the-course",
+    "title": "",
+    "section": "Orientation to the Course",
+    "text": "Orientation to the Course\n\nGreat, now that we have technology squared away, let’s move ahead and learn about the scope of today’s learning."
+  },
+  {
+    "objectID": "welcome.html#the-data-analysis-pipeline",
+    "href": "welcome.html#the-data-analysis-pipeline",
+    "title": "",
+    "section": "The Data Analysis Pipeline",
+    "text": "The Data Analysis Pipeline\n\n\nThis workshop is a gentle introduction to data science designed for healthcare professionals and researchers who don’t have a background in programming. This slide shows a high-level conceptual framework of the most important steps of the data analysis process.\nYou always start by importing data and cleaning or “tidying” it up.\nThen you start an iterative process of exploratory data analysis, which usually requires some data transformation.\nThe main engines of knowledge generation are visualization and modeling.\nFinally, you need to communicate your results.\nWe will introduce the basics of all of these steps today, with the exception of modeling."
+  },
+  {
+    "objectID": "welcome.html#lecture-slides",
+    "href": "welcome.html#lecture-slides",
+    "title": "",
+    "section": "Lecture Slides",
+    "text": "Lecture Slides\n\n\nIn general, we will introduce new concepts with lecture slides like this one. We try to illustrate the concepts in a way that makes it easier to learn how to write code. Importantly, you will have access to the slides and be able to look at them again after you leave this course."
+  },
+  {
+    "objectID": "welcome.html#timed-interactive-coding-exercises",
+    "href": "welcome.html#timed-interactive-coding-exercises",
+    "title": "",
+    "section": "Timed Interactive Coding Exercises",
+    "text": "Timed Interactive Coding Exercises\n\n\n\n\n\n\n\n\nAfter we present you with explanations, we’ll then practice these new skills with timed interactive coding exercises. For the coding exercises, we set up a training environment on the web specifically for this course.\nPlease note that these exercises are timed. It’s not essential that you finish each exercise, but it’s essential that you try. When the time is up, I ask that everyone stop working. After each coding exercise, we will come back together, and I will live code the exercise to catch everyone up."
+  },
+  {
+    "objectID": "welcome.html#code-of-conduct",
+    "href": "welcome.html#code-of-conduct",
+    "title": "",
+    "section": "Code of Conduct",
+    "text": "Code of Conduct\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://events.linuxfoundation.org/r-medicine/attend/code-of-conduct/\n\nOne more serious thing I need to point out, since this is an interactive course - we want to provide a welcoming and supportive environment for all people, regardless of background or identity.\nSo we have a strict no-harassment policy: this includes abusive, offensive, or degrading language, in writing or in voice.\nWe also want people to feel that they can be themselves, especially in breakout rooms. While we will be recording this main session, we ask that participants refrain from taking screenshots or recording their fellow learners."
+  },
+  {
+    "objectID": "welcome.html#your-turn-2",
+    "href": "welcome.html#your-turn-2",
+    "title": "",
+    "section": "Your Turn #2",
+    "text": "Your Turn #2\nMeet and greet! We will send you into breakout rooms, where you will have 10 minutes to meet one of our TAs and some of your fellow participants.\n\nThis brings us to our first breakout session! When the invitation appears to join a breakout room, please go ahead and join.\nFor this exercise, we encourage you to turn on your microphone and camera, if you’re comfortable.\nAt the 10 min mark, we’ll bring everyone back into the main session. Depending on how many participants we have, there may be a lot of you in each break room, so we folks to be mindful of time when you introduce yourself and why you’re in this session.\n\n\n\n\nR/Medicine 2023"
+  },
+  {
+    "objectID": "introduction.html#getting-started-with-rstudio",
+    "href": "introduction.html#getting-started-with-rstudio",
+    "title": "",
+    "section": "Getting Started With RStudio",
+    "text": "Getting Started With RStudio\n\nLet’s look at RStudio first."
+  },
+  {
+    "objectID": "introduction.html#rstudio-on-the-web-and-on-your-desktop",
+    "href": "introduction.html#rstudio-on-the-web-and-on-your-desktop",
+    "title": "",
+    "section": "RStudio: On the Web and on Your Desktop",
+    "text": "RStudio: On the Web and on Your Desktop\n\n\n \n\n \n\n\n\n\n\n\nPosit.cloud\nHosted by Posit (in the cloud)\n\nPosit Workbench\nHosted by you, your company, your university, on prem or in the cloud\n\nRStudio Desktop\nInstalled on your computer\n\n\n\nAs I just mentioned, there are several versions of RStudio:\nPosit.Cloud – a version of the RStudio IDE, also now known as Posit, that can be accessed from a web browser. It’s hosted on a server by Posit, the company that makes this software.\nPosit Workbench – a version of the RStudio IDE, also now known as Posit, that can be accessed from a web browser. It’s hosted on a server that could be on premises or in the cloud. You might have an instance of Posit Workbench at your workplace.\nRStudio Desktop – a version of the RStudio IDE that is installed on a personal device like your desktop or laptop. This is what you may want to use after the course to continue learning R and working on R projects. On the course website, there are videos that show you how to install RStudio Desktop on a Mac or Windows computer.\nIt’s important to note that regardless of which version of RStudio that you use, you will be accessing the same general product – there’s no functionality in RStudio Server that you can’t get in RStudio Desktop, or vice versa."
+  },
+  {
+    "objectID": "introduction.html#whoops",
+    "href": "introduction.html#whoops",
+    "title": "",
+    "section": "Whoops!",
+    "text": "Whoops!\nThere are some small server issues that won’t affect our work today but will create a couple of scary looking messages in your first exercise.\n\nFailed to create bus connection: No such file or directory\nWarning message: In system(“timedatectl”, intern = TRUE) : running command ‘timedatectl’ had status 1\n\n\nSo, Joy asked me to apologize to you all on her behalf. With the latest version of RStudio Workbench, there’s a small error she’s trying to chase down related to synching up the server clock.\nYou’ll see these error messages, probably just one time, and you shouldn’t see these if you work in R on your own computer in the future. It’s a weird artifact of how our server is set up. While these messages may look scary, they won’t affect our work today."
+  },
+  {
+    "objectID": "introduction.html#your-turn-1",
+    "href": "introduction.html#your-turn-1",
+    "title": "",
+    "section": "Your Turn #1",
+    "text": "Your Turn #1\nGo to https://posit.cloud/spaces/378122/content/6017155 in your browser. If you’re not already logged in, log in to Posit.cloud.\nClick “yes” once you see something like the image below. \n\n\n\n−+\n01:00\n\n\n\n\nNow it’s your turn to get logged into Posit.cloud\nPlease click the yes button in zoom to let us know you logged in successfully.\nWe will do our best to get everyone logged in. If you are struggling to log in, please reach out in the chat and we will try to help you.\nIn a course this size, we may not be able to get every participant logged in successfully. If you can’t access the cloud, please reach out via the chat so we can connect you with a TA. If we aren’t able to help with your specific issue, don’t worry, follow along via the slides, the course will still be valuable for you."
+  },
+  {
+    "objectID": "introduction.html#reproducible-data-analysis-and-r-markdown",
+    "href": "introduction.html#reproducible-data-analysis-and-r-markdown",
+    "title": "",
+    "section": "Reproducible Data Analysis and R Markdown",
+    "text": "Reproducible Data Analysis and R Markdown\n\nNow that you know a bit more about the vocabulary and computing environment we’ll be using, we want to contextualize why you might want to use R, RStudio, and R Markdown, even though you may have worked with data before in other software.\nOne of the most important reasons to learn R is to improve the reproducibility of your research. One of the most powerful aspects of working in the R environment is that it makes it straightforward to produce reproducible data analyses, which will reduce risk and make “future you” much happier."
+  },
+  {
+    "objectID": "introduction.html#the-duke-cancer-scandal",
+    "href": "introduction.html#the-duke-cancer-scandal",
+    "title": "",
+    "section": "The Duke Cancer Scandal",
+    "text": "The Duke Cancer Scandal\n\n\n\nChemo sensitivity from microarrays\nSerious errors in data analysis\nClinical trials based on flawed models\nPapers retracted, lawsuits settled\n\n\n\n\n\n\nConsider the following case study, which highlights potential consequences of irreproducibile research.\nIn the mid-2000s, researchers at Duke University tried to use microarray gene expression data of tumor cells to predict sensitivity to chemotherapeutic agents. This approach generated a lot of excitement at the time, and the resulting work was published in high-profile journals.\nUnfortunately, there were a number of serious errors in the data analysis.\nEven more unfortunately, patients were enrolled in clinical trials and allocated based on flawed models. It’s likely that some patients were actually treated with the chemo they are least likely to respond to rather than the chemo that’s most likely to work.\nIn the end, 18 papers were retracted, and Duke settled more than 10 lawsuits for an undisclosed amount of money."
+  },
+  {
+    "objectID": "introduction.html#common-problems-are-simple",
+    "href": "introduction.html#common-problems-are-simple",
+    "title": "",
+    "section": "“Common problems are simple…",
+    "text": "“Common problems are simple…\n\nOff-by-one indexing error\nSensitive / resistant label reversal\nConfounding in experimental design\nInclusion of data from non-reported sources\nWrong figure shown\n\n… and simple problems are common.”\n\nThe off-by-one indexing error was just one of many simple errors the MD Anderson team discovered.\nAnother type of error that was pervasive in the study was label reversal; cell lines were labeled sensitive to a drug when they actually were resistant, and vice versa. That type of error can lead to a scenario where a patient gets the chemotherapy that would be predicted to be least beneficial.\nOther problems they identified were confounding, inclusion of data from sources that were not reported in the paper, and wrong figure shown.\nThese are all simple errors – people who make them aren’t necessarily incompetent or negligent.\nBecause these errors are so easy to make and because without good documentation or a reproducible workflow it’s hard to catch them, they are also very common."
+  },
+  {
+    "objectID": "introduction.html#point-and-click",
+    "href": "introduction.html#point-and-click",
+    "title": "",
+    "section": "Point-and-Click…",
+    "text": "Point-and-Click…\n… is not reproducible!\n\n\nA key issue in this case study is that the Duke investigators used “point and click” tools like Excel.\nThis prevented peers and independent investigators from catching errors in the analysis, until it was too late.\nUnfortunately, the Duke case study is only one example where the barrier to reproducibility was that people used graphical user interface “point-and-click” type tools for analyzing large and complicated sets of data. Excel doesn’t record user actions and because of this, is fundamentally not reproducible."
+  },
+  {
+    "objectID": "introduction.html#why-bother-with-reproducibility",
+    "href": "introduction.html#why-bother-with-reproducibility",
+    "title": "",
+    "section": "Why Bother With Reproducibility?",
+    "text": "Why Bother With Reproducibility?\n\nCan we redo the analysis with this month’s data?\nWhy do the data in Table 1 not seem to agree with Figure 2?\nWhy did I decide to omit these six samples from my analysis?\n\nYour closest collaborator is you from 6 months ago…\n\nReproducibility doesn’t only help people outside a study understand how things were done. They also help the initial conduct of research as well. Consider the following 3 statements and ask yourself if they sound familiar.\n\nCan we redo the analysis with this month’s data?\nWhy do the data in Table 1 not seem to agree with Figure 2?\nWhy did I decide to omit these six samples from my analysis?\n\nYour closest collaborator is you from 6 months ago…\n… but they don’t answer your emails!\nAdditionally, we’ve already seen how irreproducibility can cause real harm to human subjects, something we all want to avoid."
+  },
+  {
+    "objectID": "introduction.html#anatomy-of-an-r-markdown-document",
+    "href": "introduction.html#anatomy-of-an-r-markdown-document",
+    "title": "",
+    "section": "Anatomy of an R Markdown document",
+    "text": "Anatomy of an R Markdown document\n\n\nQuarto documents are composed of 3 basic types of building blocks.\nThe first is the header which includes information about the document, such as its title, author, and the desired output format when the document is rendered. A lot of this information is optional so a header can be pretty short, like the one we see here, or much longer.\nThe second type of building block is text. Text can include special kinds of marks (Markdown) that add styling. This includes hash marks that turn a line of text into a header, asterisks that can create italics, lines of dashes that turn into horizontal lines, and more.\nThe third is code chunks. Code chunks contain R code that can be executed to output results."
+  },
+  {
+    "objectID": "introduction.html#running-a-single-code-chunk",
+    "href": "introduction.html#running-a-single-code-chunk",
+    "title": "",
+    "section": "Running a Single Code Chunk",
+    "text": "Running a Single Code Chunk\n\nCan you see the green “play” button?\nThat’s how you run this chunk!\n\nSo how do you execute the code in the code chunks? There are a couple of ways.\nThe first is to run the code in a single code chunk. And you do this by clicking the green right-pointing triangle on the top right of the chunk. This symbol looks like a “play” button. There are other symbols, too, including one that means “run all the code chunks that came before this one”."
+  },
+  {
+    "objectID": "introduction.html#rendering-knitting",
+    "href": "introduction.html#rendering-knitting",
+    "title": "",
+    "section": "Rendering (“Knitting”)",
+    "text": "Rendering (“Knitting”)\n\n\n\n\n\n\n\n\nThe second way to execute code is to convert the entire R Markdown document into HTML (or another target format). For now we’ll stick to HTML because it’s the default and usually what you want. This process of converting R Markdown into a target format is called “rendering” or “knitting” – the mental model here is that you’re knitting together marked up text, code, and results into a nicely formatted document that you can then present or share with others.\nTo knit a document, click the button that says “Knit” next to a blue ball of yarn on the top left of the Editor pane. Then in a few moments, a rendered document will be shown.\nIf you are working in some forms of R Markdown, like R Notebooks, you’ll see the word “Preview” instead of “Knit”. That also acts to render the Markdown."
+  },
+  {
+    "objectID": "introduction.html#your-turn-2",
+    "href": "introduction.html#your-turn-2",
+    "title": "",
+    "section": "Your Turn #2",
+    "text": "Your Turn #2\nGo to File > New File > Quarto Document. Click OK.\nThis will give you a handy template which is used to show you a working example of a simple R Markdown document. You will be asked to provide a title and author, and you can choose any values you like, such as “Test” or “My First Markdown”.\nRun each chunk by clicking the green “play” button (). Note what happens.\nRender the document (). Type “test” and click Save to save the HTML file. Inspect the HTML document.\n\n\n\n−+\n03:00\n\n\n\n\nIt’s your turn again.\nFollow the instructions in Your Turn #2 to - create a new R Markdown document - run all of the code chunks - knit the document\nWhen you knit the document, it will ask you for a filename to save to – just enter “test”\nWe will meet back in 3 minutes to review this exercise together.\nLive Coding Section (Switch to Posit and do the exercise)\nA few things to note as I go through this: the header starts with 3 dashes and ends with 3 dashes.\nI want to point out that each code chunk starts with 3 backticks and “r” in curly braces, and ends with 3 backticks. RStudio helps your recognize code chunks because it makes code chunks have a gray background.\nNote that we saved test.Rmd (R Markdown file) and test.html (knitted HTML file). You might wonder why you want to deal with two files. Rmd is source code document. It contains code, and to be able to use it, you need to have R installed. The Rmd file makes things reproducible and it’s great to share with another data analyst or a journal. The HTML is a presentation file that you can show in any web browser. It doesn’t require the user to have R installed, and it’s not for running code, it’s for showing your work. This is the kind of file you might share with your boss or other stakeholders who don’t want to work in R or RStudio but are curious about what you did.\nCan anyone tell me why is the gray code box missing in the rendered document? That’s right, there’s an echo=FALSE, which means “hey, please don’t show this code in the final document.” “Echo” here means “print what we typed”. Sometimes showing your code is helpful, but sometimes it can be distracting, especially if you’re using Quarto to create a report that just shows results, for example, to show your PI some information about recruitment goals. If your stakeholders don’t want to see the code, but just the result of the code, use “echo = FALSE”."
+  },
+  {
+    "objectID": "introduction.html#importing-data",
+    "href": "introduction.html#importing-data",
+    "title": "",
+    "section": "Importing Data",
+    "text": "Importing Data\n\nNow that we are familiar with how to create Quarto documents we can begin the process of performing data analysis in R in earnest by importing a clinical data set."
+  },
+  {
+    "objectID": "introduction.html#the-data-analysis-pipeline",
+    "href": "introduction.html#the-data-analysis-pipeline",
+    "title": "",
+    "section": "The Data Analysis Pipeline",
+    "text": "The Data Analysis Pipeline\n\n\nThe first step in the data analysis pipeline is to bring in, or import, the data to your environment, which for the purposes of this workshop is R.\nIn this workshop, we’ll work with a fabricated (completely made up) data set consisting of COVID-19 laboratory test results from a hypothetical infectious disease diagnostics lab. This data is stored as a CSV file."
+  },
+  {
+    "objectID": "introduction.html#csv",
+    "href": "introduction.html#csv",
+    "title": "",
+    "section": "CSV",
+    "text": "CSV\n\n\nSo what’s a .csv file? CSV stands for comma-separated values. When we say this aloud, we just say each letter: C - S - V.\nA .csv file is a plain text file, which means you can open it in a text editor and look at it. This is different than how you may have opened .csv files in the past, using Microsoft Excel or another spreadsheet program. This is an example of what raw csv data looks like when we open it in a text editor.\nHere we have a .csv file with the names, medical record numbers, and dates of birth for three fictional “patients”.\nThis data structure is called rectangular or “tabular” because it falls into rows and columns, often called a table, where each row has the same number of columns, and each columns has the same number of rows.\nAlso note that this particular .csv file has a header row that instead of data, has a name for each column. .csv files often have such a header row and unless we specify otherwise, when we import this data, R assumes the first line is a header row. Not all .csv files have headers, however, so be aware that you might run across these at some point."
+  },
+  {
+    "objectID": "introduction.html#tidyverse",
+    "href": "introduction.html#tidyverse",
+    "title": "",
+    "section": "Tidyverse",
+    "text": "Tidyverse\n\n\n\nA consistent way to organize data\nHuman readable, concise, consistent code\nBuild pipelines from atomic data analysis steps\n\n\n\n\n\n\nTo import our CSV data, we need some additional data analysis tools. In this course, we will be leveraging the Tidyverse.\nThe Tidyverse is a set of tools that has become the de facto standard for doing data science with R.\nThe basic tenets of “tidy” data analysis include: * Data should be organized in a consistent, standardized way. Each row is an observation, and each column is a variable. This is a very common way to organize data in a spreadsheet and might sound familiar from how you may already organize data in tools like Excel. * Programming code that acts on the data should be consistent, concise, and sound like human language as much as possible. * Each data analysis can be broken down into a series of atomic steps, such as “select this column” or “arrange the data by the values in that column”. An arbitrarily complex data analysis can be broken down as a pipeline of atomic steps."
+  },
+  {
+    "objectID": "introduction.html#installing-and-loading-packages",
+    "href": "introduction.html#installing-and-loading-packages",
+    "title": "",
+    "section": "Installing and Loading Packages",
+    "text": "Installing and Loading Packages\n\n\n\n\n\n\n\n\nThe tidyverse is package (a collection of functions, data, and help documentation) that we can use to extend the innate functionality of R, which is often referred to as “base R”. In fact, tidyverse is special because it includes a suite of interrelated packages that work together to do a number of tasks related to importing, reshaping, visualizing, and analyzing data.\nYou can download and install a package with the command install.packages. For example, to install the tidyverse package, you would go to the R Console and type install.packages(\"tidyverse\"). Each package you want to use needs to be installed only once on each computer.\nIn our Posit.cloud workspace, you won’t need to install any packages for this course (as we have installed them for you). If you’re using R on your own computer, however, you will have to install packages.\nMake sure you include the quotes around tidyverse. When to use quotes is a tricky topic that we will talk about more later in this workshop, but for now, keep in mind that you will always need to put quotes around the name of a package whenever using install.packages().\nAfter you’ve installed the package, in order to use the functions that it provides, you also need to load the package into the computer’s memory. This is done with the command library. So to enable all the functions in the “tidyverse” package, you type library(\"tidyverse\"). Packages remain loaded until you quit or restart the R program. Every time you start a new R session you have to load each package that you want to use again, and you need to put your library statements in the R documents that you write, preferably near the top of the file. We’ll use functions within the tidyverse package in this workshop when we import data, so it’s useful to learn about packages now.\nCongratulations, you’ve just learned your first two R commands - install.packages and library.\nOne of the great things about R is that there are tens of thousands of packages that are free to download and use."
+  },
+  {
+    "objectID": "introduction.html#read_csv",
+    "href": "introduction.html#read_csv",
+    "title": "",
+    "section": "read_csv()",
+    "text": "read_csv()\n\n\n\n\n\n\n\n\n\n\n\nWe can import CSV files using the read_csv() function.\nHere is how you use the read_csv function to read a CSV file into a data frame object. A data frame is a type of object that works like a spreadsheet and holds tabular (rectangular, row-and-column based) data."
+  },
+  {
+    "objectID": "introduction.html#functions",
+    "href": "introduction.html#functions",
+    "title": "",
+    "section": "Functions",
+    "text": "Functions\n\n\nThis code construct is exceedingly common in R, and it’s a good moment to explain functions.\nread_csv() is a function. Functions are defined in packages. We loaded the tidyverse package to be able to use the read_csv function.\nYou may be familiar with functions from math class or perhaps also from formulas in Excel. A function takes an input, say an ‘x’ value, and returns an output, say a ‘y’ value. Functions in computer programming also take inputs and return outputs. But the inputs and outputs here are the objects that exist within the context of a programming language.\nFor read_csv, the input is the file name of a CSV file; and the output is a data frame with the contents of the file."
+  },
+  {
+    "objectID": "introduction.html#functions-1",
+    "href": "introduction.html#functions-1",
+    "title": "",
+    "section": "Functions",
+    "text": "Functions\n\n\nIn the snippet of code that reads in a csv to create a data frame, we have a function with an argument that creates an object.\nThe input that goes into a function is called an argument. The argument to a function gets put in parentheses.\nA function can have zero, one, or many arguments. If there is more than one argument, we use commas to separate them."
+  },
+  {
+    "objectID": "introduction.html#functions-2",
+    "href": "introduction.html#functions-2",
+    "title": "",
+    "section": "Functions",
+    "text": "Functions\n\n\nThe output of the read_csv function is a data frame object. You will usually want to capture that data frame inside of a named object so you can use it as the input for other functions, for example to summarize or visualize your data."
+  },
+  {
+    "objectID": "introduction.html#functions-3",
+    "href": "introduction.html#functions-3",
+    "title": "",
+    "section": "Functions",
+    "text": "Functions\n\n\nTo put the output of the read_csv function into a named object, we use the assignment operator.\nThe assignment operator is a less than symbol followed by a dash and resembles an arrow pointing left. Some people like to pronounce the arrow with the word “gets.”"
+  },
+  {
+    "objectID": "introduction.html#read_csv-1",
+    "href": "introduction.html#read_csv-1",
+    "title": "",
+    "section": "read_csv()",
+    "text": "read_csv()\n\n\n\n\n\n\n\n\n\n\n\nLet’s put these pieces together to load our covid data set.\nConsider this line of code. We could speak aloud the line of code above saying “covid underscore testing gets read underscore csv of covid underscore testing dot csv”, or we could gloss over the underscores and just say “covid testing” and “read csv”. When we talk with others about R, this is often what we do, so just be aware that you sometimes have to intuit underscores when someone is reading aloud or talking through a code issue.\nYou might notice that one of our “covid testing” objects is put in quotes and the other one isn’t.\nTo be honest, quotes in R can be super confusing. A couple of rules are:\n\nNames of objects such as data frames don’t get quotes.\nLiteral file names are always put in quotes.\nWhen you’re referring to a string value, like “abc123” or “jones”, you have to use quotes.\nNames of packages, when you’re installing especially, use quotes\nBut in library, putting the package name in quotes is optional!\n\nSometimes, either quoting or not quoting works. This is one of the things where you will get a good sense but not until after some trial and error. If a line of code you’re working on doesn’t seem to be working as you expect, sometimes adding or removing quotes can be a good place to start when trying to figure it out."
+  },
+  {
+    "objectID": "introduction.html#your-turn-3",
+    "href": "introduction.html#your-turn-3",
+    "title": "",
+    "section": "Your Turn #3",
+    "text": "Your Turn #3\nIn the Files pane, click on the folder exercises.\nOpen the file titled 01 – Introduction.qmd. Instructions for this exercise are in the text of the document.\nClick () when you are done.\n\n\n\n−+\n05:00\n\n\n\n\nOnce again, I want you to go into Posit.cloud, and this time you’ll work with an existing file we’ve placed in the server for your use. You’ll go into the folder called “exercises” and fine the first assignment, called “Introduction”. Go ahead and open that, and read the rest of the instructions there.\nWe’ll give you five minutes for this, and when you’re done, click the “yes” button so we know how folks are doing.\nAfter the timer finishes, do the exercise live so they can see what it looks like…\nI’m going to start by running this code chunk. I can go to the “Run” button at the top right of the Source pane, or I can click the “run” or “play” button on top of the chunk.\nWhen I’m coding, I like to break my code up into chunks of only a few lines of code at a time. That way, if I have to make a change, it’s easy to just run the code I need to re-run, without re-running the whole thing.\nNow, did anything change when I ran this cell? Yes! In the environment pane, a new data object appeared. And I can interact with this object in several ways. I can click the triangle beside the object’s name, or I can click on the object name itself.\nSo, let’s answer the questions. How can I tell how many rows and columns there are? I can look beside the name of the object in my Environment pane and I see a number of observations, which are rows, and a number of variables, which are columns. I can also use the data view that opens up in my source pane here. At the very bottom there’s a count of rows and columns. Did anyone else figure out the answer in a different way?\nWhat about question two? Any ideas? Well, remember that we want our data analysis to be reproducible, so everything we do to the data is written in code. Changing data using point and click isn’t reproducible. That’s an important reason why R doesn’t have a data editing feature using point and click.\nDoes anyone want to put in their answer for number 3? [Correct answers: 4, 107] Great!\nAnd number 4? (865 positive tests, __ in the first 30 days).\nIf I want to check my answers, I can go in the Files pane, click beside the up arrow to go into the parent directory, go down into solutions, and open the solutions for our first assignment."
+  },
+  {
+    "objectID": "introduction.html#recap",
+    "href": "introduction.html#recap",
+    "title": "",
+    "section": "Recap",
+    "text": "Recap\n\n\n\nProgramming Language\n\n\nIDE (Editor)\n\n\nDocument Format\n\n\n\n\n\n\n\n\n\n\nPackages extend the functionality of R. Install with install.packages() and load with library()\n\n\n\n\n\n\nFunctions do stuff. They accept Arguments as input and return an Output. Capture an output in an Object using the assignment operator ( <- ).\n\n\n\n\n\n\nImporting Data is the first step of data analysis. Use read_csv() from the tidyverse package to import data stored in a CSV file.\n\n\n\nWe started by defining and differentiating R (the programming language) from RStudio (the integrated development environment – IDE – or editor) and R Markdown (the document format we use for reproducible data analysis). Then we explored RStudio and R Markdown more closely.\nWe then looked at how packages extend the functionality of R. Tidyverse is a package that is actually shorthand for a number of related packages. We’ll work with tidyverse a lot today.\nWe also looked at how to use functions. Functions, like the read_csv function, do useful things. You provide some arguments, and functions will return an output, which you can store in an object, if you want to.\nFinally, we tackled the first step of data analysis: importing (or you’ll sometimes hear people use the word “ingesting”) data. In our case today, we’re going to import data from a .csv file."
+  },
+  {
+    "objectID": "introduction.html#what-else",
+    "href": "introduction.html#what-else",
+    "title": "",
+    "section": "What Else?",
+    "text": "What Else?\nObviously in a short workshop we can barely scratch the surface… here are some other ideas to get you thinking.\n\nAt the end of each session I’m including a “what else” section to introduce you to “what else” there is out there for your to explore and learn about after completing this course."
+  },
+  {
+    "objectID": "introduction.html#cheat-sheets",
+    "href": "introduction.html#cheat-sheets",
+    "title": "",
+    "section": "Cheat Sheets",
+    "text": "Cheat Sheets\n\n\nTo find official cheat sheets, go to the Help menu in RStudio and choose “Cheat Sheets”. You can look around the short list provided, which includes great options for beginners such as “RStudio IDE Cheat Sheet”, “R Markdown Cheat Sheet”, and more. You can also “Browse”, and on the RStudio website you’ll find other cheat sheets as well, including the Data Import cheat sheet.\nRStudio’s Data Import cheat sheet helps with importing data from file types similar to CSV but with other delimiters (for example, TSV, or tab-delimited values files). Cheat sheets for the RStudio IDE and Markdown can reinforce what you’ve learned so far in this workshop and help you extend your capabilities."
+  },
+  {
+    "objectID": "introduction.html#r-for-data-science",
+    "href": "introduction.html#r-for-data-science",
+    "title": "",
+    "section": "R for Data Science",
+    "text": "R for Data Science\n\n\n\n\nIn English: https://r4ds.had.co.nz/\nEnglish unofficial solutions at https://jrnold.github.io/r4ds-exercise-solutions/index.html\nIn Spanish: https://es.r4ds.hadley.nz/\n\n\n\nR for Data Science is a free text that provides lots of helpful explanation and examples. The section on data import goes into much more detail than we were able to do in this brief workshop.\nThe entire text is available in English and in Spanish. There’s also an unofficial solutions guide (only available in English) to allow you to check your work."
+  },
+  {
+    "objectID": "introduction.html#file-formats",
+    "href": "introduction.html#file-formats",
+    "title": "",
+    "section": "File Formats",
+    "text": "File Formats\n\n\nNot all data is in CSV files, and fortunately R supports a huge number of other file formats, and here are some of the packages that help import or export them:\n\nReadxl: Microsoft Excel\nHaven: SPSS, Stata, and SAS files\nGooglesheets: Google Sheets\nRvest: web scraping\nJsonlite: JSON data and many APIs on the web"
+  },
+  {
+    "objectID": "introduction.html#databases",
+    "href": "introduction.html#databases",
+    "title": "",
+    "section": "Databases",
+    "text": "Databases\n\n\nYou can also connect to a large number of databases directly in R to pull your data. For example, you can connect to SQL databases including MySQL and Oracle, as well as using APIs (application programming interfaces) for data collection applications like REDCap and websites with API access like PubMed or the New York Times."
+  },
+  {
+    "objectID": "introduction.html#other-output-formats",
+    "href": "introduction.html#other-output-formats",
+    "title": "",
+    "section": "Other Output Formats",
+    "text": "Other Output Formats\n\n\nIn addition to HTML, R Markdown documents can be “knitted” into a number of additional formats including PDF, Microsoft Word, PowerPoint, and even interactive dashboards. We won’t go into these additional formats today but it’s helpful to know that you can avoid error-prone cut and paste when you need to create documentation about your research and data analysis."
+  },
+  {
+    "objectID": "introduction.html#r-interface-to-python",
+    "href": "introduction.html#r-interface-to-python",
+    "title": "",
+    "section": "R Interface to Python",
+    "text": "R Interface to Python\n\n\n\n\n\n```{python}\nimport pandas\ncovid_testing.info()\n```\n\n\n\n\nIn addition to R, R Markdown supports many other programming languages, including Python.\nSo you can mix code chunks written in R with code chunks written in, say, SQL or Python. While we won’t get into the use of other languages in this workshop, it’s useful to be aware of multiple language support, especially for teams in which some users prefer R and others Python.\n\n\n\n\nR/Medicine 2023"
+  },
+  {
+    "objectID": "visualize.html#covid_testing",
+    "href": "visualize.html#covid_testing",
+    "title": "",
+    "section": "covid_testing",
+    "text": "covid_testing\n\n\nThe data we will use in this workshop is the data frame we are calling covid_testing, which consists of fabricated (that is, completely fake) demographic and testing data for Covid tests early in the Covid-19 pandemic. Each row of data represents a covid test that was analyzed by our fake lab.\nThis is what that data looks like. Go ahead and take a peek at it in your own data viewer as well."
+  },
+  {
+    "objectID": "visualize.html#your-turn-1",
+    "href": "visualize.html#your-turn-1",
+    "title": "",
+    "section": "Your Turn #1",
+    "text": "Your Turn #1\nConsider the covid_testing data frame.\nWhat do you think a plot would look like in which:\n\nthe x-axis represents pan_day (day of the pandemic), and\nthe y-axis represents the number of tests that were performed on that day?\n\n\n\n\n−+\n01:00\n\n\n\n\nSo now I’m going to ask you to imagine what the following plot would look like.\nSo just take a few seconds and try to visualize this graph in your mind or doodle it on a piece of paper in front of you.\nEverybody have an idea? Click “yes” to let me know to go on!"
+  },
+  {
+    "objectID": "visualize.html#your-turn-2",
+    "href": "visualize.html#your-turn-2",
+    "title": "",
+    "section": "Your Turn #2",
+    "text": "Your Turn #2\n\nWhat is the name of this kind of plot?\nType the answer into the chat!\n\nSo what I’ve asked you to imagine is a plot in which we have the count or the frequency of a test on the y axis, and that’s broken down along the pandemic day over the x axis. Anybody know the name of that type of plot that has the count of a thing on the y axis and the distribution of those counts along the x axis?\nGo ahead and type into the chat!"
+  },
+  {
+    "objectID": "visualize.html#your-turn-3",
+    "href": "visualize.html#your-turn-3",
+    "title": "",
+    "section": "Your Turn #3",
+    "text": "Your Turn #3\nType the following code in the RStudio console to make a graph.\nPay attention to the spelling, capitalization, and parentheses!\n\nggplot(data = covid_testing) + \n  geom_histogram(mapping = aes(x = pan_day))\n\n\n\n\n−+\n01:00\n\n\n\n\nFor the next step, we’d like for you to go into the console to practice running some code there. The console is usually in the lower left pane (or it might take up the whole left side, if you don’t have any files open yet).\nDon’t panic if the code we ask you to input seems incomprehensible right now or you get an error message. We’ll walk you through what it all means!\nIn the console, please type in the following. While you can certainly cut and paste from the slides if you have those open, there is sometimes an advantage to typing the code by hand, because it helps you develop “muscle memory” about how to construct code. Pay attention to the spelling, capitalization, and parentheses!\nAnd yes, you can hit “Enter” after that plus sign and keep typing on the next line. There will be a little plus sign on the second line that lets you know that the console is accepting the second line as a continuation of the first. When you’re finished, just hit “Enter” to run that code."
+  },
+  {
+    "objectID": "visualize.html#ggplot",
+    "href": "visualize.html#ggplot",
+    "title": "",
+    "section": "ggplot()",
+    "text": "ggplot()\n\n\nThis is the ggplot code we used. Let’s take a look at what this includes."
+  },
+  {
+    "objectID": "visualize.html#ggplot-1",
+    "href": "visualize.html#ggplot-1",
+    "title": "",
+    "section": "ggplot()",
+    "text": "ggplot()\n\n\nWe always start with ggplot(). Notice that while the package is called “ggplot2”, the function doesn’t have the two… it’s just “ggplot”."
+  },
+  {
+    "objectID": "visualize.html#ggplot-2",
+    "href": "visualize.html#ggplot-2",
+    "title": "",
+    "section": "ggplot()",
+    "text": "ggplot()\n\n\nIn the parentheses just after ggplot, we provide a data frame to start with, in this case, our covid_testing data frame."
+  },
+  {
+    "objectID": "visualize.html#ggplot-3",
+    "href": "visualize.html#ggplot-3",
+    "title": "",
+    "section": "ggplot()",
+    "text": "ggplot()\n\n\nWe build our plot across several different layers, each one providing more information about the graphic we want, so we include a plus sign at the end of the first line to say “wait, we’re not done yet!”"
+  },
+  {
+    "objectID": "visualize.html#ggplot-4",
+    "href": "visualize.html#ggplot-4",
+    "title": "",
+    "section": "ggplot()",
+    "text": "ggplot()\n\n\nIn the second line, we describe what kind of geometric representation we want – a histogram, which we communicate to R using geom_histogram()."
+  },
+  {
+    "objectID": "visualize.html#ggplot-5",
+    "href": "visualize.html#ggplot-5",
+    "title": "",
+    "section": "ggplot()",
+    "text": "ggplot()\n\n\nWe also add some mappings inside the parentheses of geom_histogram, explaining which data from the data frame should be displayed in the histogram. We use aes() (short for “aesthetic” or “aesthetic mapping”) to tell ggplot how to draw the visualization."
+  },
+  {
+    "objectID": "visualize.html#ggplot-6",
+    "href": "visualize.html#ggplot-6",
+    "title": "",
+    "section": "ggplot()",
+    "text": "ggplot()\n\n\nInside the parentheses of “aes” we specify the x-axis by including “x = variable”. In this case, we write “x = pan_day”. We only have to specify the x axis, because a histogram assumes that you’re counting rows of data and will map that to the y axis."
+  },
+  {
+    "objectID": "visualize.html#to-make-any-graph",
+    "href": "visualize.html#to-make-any-graph",
+    "title": "",
+    "section": "To Make Any Graph",
+    "text": "To Make Any Graph\n\n\nWe just provided a high level of detail on the specific use case of working with the covid_testing data frame, but once you have the pattern in mind, you mostly have to think about three main tasks, shown here in blue. We’ll explain each step in the following sections."
+  },
+  {
+    "objectID": "visualize.html#to-make-any-graph-1",
+    "href": "visualize.html#to-make-any-graph-1",
+    "title": "",
+    "section": "To Make Any Graph",
+    "text": "To Make Any Graph\n\n\nStep 1: Pick a tidy data frame (this contains the data you want to plot, organized in a tidy way) and add it to the first line, where we see ggplot(data = )"
+  },
+  {
+    "objectID": "visualize.html#a-tidy-data-frame",
+    "href": "visualize.html#a-tidy-data-frame",
+    "title": "",
+    "section": "A Tidy Data Frame",
+    "text": "A Tidy Data Frame\n\n\n\n\n\n\n\n\nA data set is tidy if:\n\nEach variable is in its own column\nEach observation is in its own row\nEach value is in its own cell\n\n\n\n\nA data set can take on a lot of different shapes with different styles of organizing data. The one method or shape that is best suited for data analysis is known as “tidy”.\nWe won’t cover “tidy” data in detail in this workshop. It’s sufficient at this point to know that tidy data is in a rectangular shape with rows and columns, and:\n\nColumns each measure just one thing (so, no “doubling up” with first and last name in the same column, or race and gender in the same column) and\nRows each constitute a single observation (like a single patient, or a single vial, or a single city block)\nEach value is in its own cell (again, no doubling up values or merging of cells)\n\nThe sample data we’re going to work with in this workshop, the covid_testing data, is already “tidy”. So our first step is easy: we are going to choose the covid_testing data frame and put that as our tidy data frame."
+  },
+  {
+    "objectID": "visualize.html#to-make-any-graph-2",
+    "href": "visualize.html#to-make-any-graph-2",
+    "title": "",
+    "section": "To Make Any Graph:",
+    "text": "To Make Any Graph:\n\n\nStep 2 is to pick a geom function (this is the type of plot you want to make), and add it as a new line (like we did with geom_histogram)"
+  },
+  {
+    "objectID": "visualize.html#geom-functions",
+    "href": "visualize.html#geom-functions",
+    "title": "",
+    "section": "Geom Functions",
+    "text": "Geom Functions\n\n\n\n\ngeom_histogram()\n\n\n\ngeom_dotplot()\n\n\n\n\n\n\ngeom_bar()\n\n\n\ngeom_boxplot()\n\n\n\n\n\n\ngeom_point()\n\n\n\ngeom_line()\n\n\n\nHere are a few useful geom functions for visualizing clinical data, but there are many more. With these six you can make histograms, bar plots, scatter plots, dot plots, boxplots, and line graphs."
+  },
+  {
+    "objectID": "visualize.html#to-make-any-graph-3",
+    "href": "visualize.html#to-make-any-graph-3",
+    "title": "",
+    "section": "To Make Any Graph:",
+    "text": "To Make Any Graph:\n\n\nLet’s take on the third step: writing aesthetic mappings. This is where you tell R how you want the columns of the data frame represented as graphical markings on the plot. It’s important to start with a very important distinction between aesthetics in general and an aesthetic mapping, which is a kind of aesthetic."
+  },
+  {
+    "objectID": "visualize.html#aesthetics",
+    "href": "visualize.html#aesthetics",
+    "title": "",
+    "section": "Aesthetics",
+    "text": "Aesthetics\n\n\n\nAn aesthetic is something that you can see about a data element on a graphic, such as its position on an x/y grid, but also other features such as for example its color.\nAn aesthetic mapping is a rule that tells ggplot how to visualize the data using a specific column of the data. These are elements that would result in a different looking visualization if you were to change the data being provided. For example, the height of a bar changes depending on the data. Maybe you might show female patients as dots of one color and male patients as dots of another color. You’re mapping patient sex to a visible characteristic, color.\n\nOf course, there are other visual elements of a data visualization that wouldn’t automatically change if you change the data you provide. For instance, maybe we just like green and we want all the points on our graph to be green. We’re not changing the color based on data, so it’s not considered a mapping. When we’re setting a fixed aesthetic that isn’t affected by data, we don’t put these assignments inside the aes parentheses."
+  },
+  {
+    "objectID": "visualize.html#aesthetic-mappings",
+    "href": "visualize.html#aesthetic-mappings",
+    "title": "",
+    "section": "Aesthetic Mappings",
+    "text": "Aesthetic Mappings\n\naes(x = a, y = b, color = c)\n\nDon’t worry if mapping aesthetics versus setting fixed aesthetics seems a bit fuzzy at first – it can be tricky to grapple with, and will become clearer over time as you gain more experience manipulating visualizations in R. Even advanced coders sometimes mess this up.\nLet’s consider an example in a data frame with three columns, called “a”, “b”, and “c”.\nWe can imagine mapping the values in column “a”, which are numerical values, to the x axis. With column “b”, also numerical, we can map those values to the y axis. And for column “c”, which has categorical data with “M” and “F” values, we can imagine mapping that to colors.\nThe mapping in ggplot would be within the aes parentheses, as you see on your screen.\nNote that R automatically figures out reasonable axis limits and a color scale, but you can fine tune this manually."
+  },
+  {
+    "objectID": "visualize.html#your-turn-4",
+    "href": "visualize.html#your-turn-4",
+    "title": "",
+    "section": "Your Turn #4",
+    "text": "Your Turn #4\n\nIn addition to x/y position and color, what other aesthetic mappings can you think of?\n(Hint: things that don’t change to fit the data, like the background color of a graph, aren’t mappings).\nType your answers in the chat!\n\nOkay, time to fire up the chat window again. Type into chat some examples of other aesthetic mappings. Keep in mind that if something is set in a fixed way and it’s the same regardless of the data, that’s not a mapping."
+  },
+  {
+    "objectID": "visualize.html#aesthetic-mappings-1",
+    "href": "visualize.html#aesthetic-mappings-1",
+    "title": "",
+    "section": "Aesthetic Mappings",
+    "text": "Aesthetic Mappings\n\n\nFrom Fundamentals of Data Visualization, by Claus Wilke, licensed under CC-BY-NC-ND\n\n\nThere are actually a lot of aesthetic mapping possibilities, and they depend on the kind of plot you’re making. For example, for a line graph you can define line width and line type, and for scatter plots you can define the shape of the dots.\nPicking the best aesthetics for your graph is as much an art as it is a science. Claus Wilke’s Fundamentals of Data Visualization is a great introduction to this topic."
+  },
+  {
+    "objectID": "visualize.html#to-make-any-graph-4",
+    "href": "visualize.html#to-make-any-graph-4",
+    "title": "",
+    "section": "To Make Any Graph:",
+    "text": "To Make Any Graph:\n\n\nSo, to recap quickly, you can make any simple graph in ggplot by using this template, and replacing what’s in blue here with your own values. You will:\n\npick a tidy data frame;\npick a geom function;\nwrite aesthetic mappings."
+  },
+  {
+    "objectID": "visualize.html#your-turn-5",
+    "href": "visualize.html#your-turn-5",
+    "title": "",
+    "section": "Your Turn #5",
+    "text": "Your Turn #5\nOpen 02 - Visualize.Qmd. Work through the exercises of the section titled “Your Turn 5”.\nStop when it says “Stop Here”.\nClick “yes”  when you’re done!\n\n\n\n−+\n05:00\n\n\n\n\nAlright, so we have another hands-on exercise here. Make sure you’re in the folder called “exercises” and open the file called “02 - Visualize”. Then follow the instructions. You have five minutes for this work. Have fun!\n** Live Coding **\nOK, so I’m going to do what you did. First I run this chunk to make sure I have the covid_testing data frame available to me. In my case, it was already in my environment, but it doesn’t do any harm to run it again.\nThis first exercise is pretty simple, I’m just filling in the blanks, so I’ll add “covid_testing” in the first blank, “geom_histogram” in the second blank, and “pan_day” in the third.\nThe second asks me to put in a bit more, so let’s add “data = covid_testing” in my first blank, “geom_histogram” in the second blank, “x = pan_day” in the third blank and “1” in the final blank.\nFinally, I’m going to copy and paste, and add a second mapped aesthetic. You can have several mapped aesthetics that are separated by commas. So I add a comma after “x = pan_day” and add “fill = result”."
+  },
+  {
+    "objectID": "visualize.html#geom-functions-1",
+    "href": "visualize.html#geom-functions-1",
+    "title": "",
+    "section": "Geom Functions",
+    "text": "Geom Functions\n\nWe’ve briefly looked at geom_ functions earlier and you might now appreciate how that makes it so easy to switch out one type of graph for another. But let’s dive a bit deeper into the concept of geom functions."
+  },
+  {
+    "objectID": "visualize.html#your-turn-6",
+    "href": "visualize.html#your-turn-6",
+    "title": "",
+    "section": "Your Turn #6",
+    "text": "Your Turn #6\nReturn to 02 - Visualize.qmd. Work through the exercises of the section titled “Your Turn 6.”\nClick “yes” when you’re done!\n\n\n\n−+\n05:00\n\n\n\n\nAlright, so you’re going to go back into that same file we were working with earlier, and you’re going to do the second portion of the file. Go ahead and go into your exercises folder and open “02-Visualize.” Follow the instructions, and if you get done early, there’s a bonus section for you which is entirely optional.\nLive Coding\nYou had three tasks to complete. We’ll go through them one at a time.\nYour first task invited you to run a code chunk that creates a histogram and use that code as the basis of a new code chunk that creates a frequency polygon. To do that, I will copy-paste and try typing geom_fre… and discover the geom_freqpoly. Run that, and yep, that’s the right code!\nIn your second task, you were asked to set the color of the line to “blue”. Note that lines have “color” while shapes have “fill” (for the inside) as well as optional “color” (for the edges).\nI simply add color = “blue”, outside the aes parentheses, since this is fixed.\nFinally, you were asked to predict what the output of ggplot code using two different geom functions would be:\nRun that code, and you should see something like this!"
+  },
+  {
+    "objectID": "visualize.html#recap",
+    "href": "visualize.html#recap",
+    "title": "",
+    "section": "Recap",
+    "text": "Recap\n\n\n\n\n\n\n\n\nggplot2 is a package that provides a grammar of graphics. You can create any type of plot using a simple template to which you provide:\n\n\n\n\n\n\n\n\n\n\nA tidy data frame, in which each variable is in its own column, each observation is in its own row, each value is in its own cell;\n\n\n\n\n \n\nA geom function, which tells R what kind of plot to make; and\n\n\n\n\n\n\nAesthetic mappings, which tell R how to represent data as graphical markings on the plot.\n\n\n\nTo recap, ggplot2 is a package that provides a grammar of graphics. You can create any type of plot using a simple template to which you provide:\nA tidy data frame, in which each variable is in its own column, each observation is in its own row, each value is in its own cell; A geom function, which tells R what kind of plot to make; and Aesthetic mappings, which tell R how to represent data as graphical markings on the plot."
+  },
+  {
+    "objectID": "visualize.html#what-else",
+    "href": "visualize.html#what-else",
+    "title": "",
+    "section": "What Else?",
+    "text": "What Else?\n\nLet’s spend the next few minutes on an important conceptual distinction about how you can define aesthetics in your plot."
+  },
+  {
+    "objectID": "visualize.html#saving-plots",
+    "href": "visualize.html#saving-plots",
+    "title": "",
+    "section": "Saving Plots",
+    "text": "Saving Plots\n\n\nTo save a plot you’ve created in the console, you can go to the Plots pane on the bottom right of the RStudio window, click “Export”, and select “Save as Image”.\nTo save a plot you’ve created by running some code inside an R Markdown file, you can right-click the plot and select “Save image as”."
+  },
+  {
+    "objectID": "visualize.html#position-adjustments",
+    "href": "visualize.html#position-adjustments",
+    "title": "",
+    "section": "Position Adjustments",
+    "text": "Position Adjustments\n\n\nggplot(covid_testing) +\n  geom_histogram(\n    mapping = aes(x = pan_day, fill = result),\n    position = position_dodge()\n  )\n\n\n\n\n\nWe’ve only barely scratched the surface of what you can do with ggplots. For example, you can change how overlapping objects are arranged. For example, instead of a stacked histogram, you can request side-by-side bars."
+  },
+  {
+    "objectID": "visualize.html#themes",
+    "href": "visualize.html#themes",
+    "title": "",
+    "section": "Themes",
+    "text": "Themes\n\n\nggplot(covid_testing) +\n  geom_histogram(\n    mapping = aes(x = pan_day, fill = result),\n    position = position_dodge()\n  ) +\n  theme_light()\n\n\n\n\n\nYou can use different themes which affect how non-data elements such as axes, gridlines, and background appear."
+  },
+  {
+    "objectID": "visualize.html#scales",
+    "href": "visualize.html#scales",
+    "title": "",
+    "section": "Scales",
+    "text": "Scales\n\n\nlibrary(colorspace)\n\ncols <- c(\n  \"invalid\" = \"grey80\",\n  qualitative_hcl(2, palette = \"dark3\")\n)\n\nggplot(covid_testing) +\n  geom_histogram(\n    mapping = aes(x = pan_day, fill = result),\n    position = position_dodge()\n  ) +\n  theme_light() +\n  scale_fill_manual(values = cols)\n\n\n\n\n\nYou can customize color scales. There are a number of libraries to help you pick color scales, including ones that are colorblind safe palettes."
+  },
+  {
+    "objectID": "visualize.html#facets",
+    "href": "visualize.html#facets",
+    "title": "",
+    "section": "Facets",
+    "text": "Facets\n\n\nggplot(covid_testing) +\n  geom_histogram(\n    mapping = aes(x = pan_day, fill = result)\n  ) +\n  theme_light() +\n  scale_fill_manual(values = cols) +\n  facet_wrap(~demo_group)\n\n\n\n\n\nYou can facet your plot. That means breaking it into sub-plots by another variable, for example, gender or location in the hospital."
+  },
+  {
+    "objectID": "visualize.html#coordinate-systems",
+    "href": "visualize.html#coordinate-systems",
+    "title": "",
+    "section": "Coordinate Systems",
+    "text": "Coordinate Systems\n\n\nggplot(covid_testing) + \n  geom_histogram(\n    mapping = aes(x = pan_day, fill = result)\n  ) + \n  theme_light() +\n  scale_fill_manual(values = cols) + \n  facet_wrap(~demo_group) + \n  coord_polar()\n\n\n\n\n\nYou can also use polar coordinates or create geographic maps by changing your coordinate system."
+  },
+  {
+    "objectID": "visualize.html#titles-and-captions",
+    "href": "visualize.html#titles-and-captions",
+    "title": "",
+    "section": "Titles and Captions",
+    "text": "Titles and Captions\n\n\nggplot(covid_testing) +\n    geom_histogram(\n        mapping = aes(x = pan_day, fill = result)\n    ) +\n    theme_light() +\n    facet_wrap(~demo_group) +\n    ggtitle(label = \"COVID19 Test Volume\",\n         subtitle = \"Faceted by Demographic Group\") +\n    xlab(\"Day of Pandemic\") +\n    ylab(\"Number of Tests\")\n\n\n\n\n\nAnd you can add titles, subtitles, or annotations, and change the axis labels or the appearance."
+  },
+  {
+    "objectID": "visualize.html#a-grammar-for-tables",
+    "href": "visualize.html#a-grammar-for-tables",
+    "title": "",
+    "section": "A Grammar for Tables",
+    "text": "A Grammar for Tables\n\n\n\n\n\n\nThe gt package provides a grammar create display tables, i.e. tables that you might want to show in a publication or on a summary report. The gtsummary package makes it trivial to generate publication-ready tables from a tidy data frame.\n\n\n\n\nR/Medicine 2023"
+  },
+  {
+    "objectID": "introduction.html#your-turn-1-1",
+    "href": "introduction.html#your-turn-1-1",
+    "title": "",
+    "section": "Your Turn #1",
+    "text": "Your Turn #1\nClick the link in the chat to access the RStudio training environment.\nLog in using your username and password.\nClick “yes” once you see the RStudio panes.\n\nNow it’s your turn to get logged into the RStudio training environment.\nThe link to the training environment is in this morning’s email, but I’m also going to ask Joy to paste the link into the Zoom chat. When you click on this link, it’ll ask you for a username and password. You can find your username and password in an Excel spreadsheet that’s attached to this morning’s reminder email.\nPlease click the “yes” button in the Participants window to let us know you logged in successfully and can see the Rstudio panes. If you have any issues, please let us know in the chat!"
+  },
+  {
+    "objectID": "introduction.html#rendering-knitting-in-r-markdown",
+    "href": "introduction.html#rendering-knitting-in-r-markdown",
+    "title": "",
+    "section": "Rendering (“Knitting” in R Markdown)",
+    "text": "Rendering (“Knitting” in R Markdown)\n\n\n\n\n\n\n\n\nThe second way to execute code is to convert the entire R Markdown document into HTML (or another target format). For now we’ll stick to HTML because it’s the default and usually what you want. This process of converting R Markdown into a target format is called “rendering” or “knitting” – the mental model here is that you’re knitting together marked up text, code, and results into a nicely formatted document that you can then present or share with others.\nTo knit a document, click the button that says “Knit” next to a blue ball of yarn on the top left of the Editor pane. Then in a few moments, a rendered document will be shown.\nIf you are working in some forms of R Markdown, like R Notebooks, you’ll see the word “Preview” instead of “Knit”. That also acts to render the Markdown."
+  },
+  {
+    "objectID": "introduction.html#anatomy-of-a-quarto-document",
+    "href": "introduction.html#anatomy-of-a-quarto-document",
+    "title": "",
+    "section": "Anatomy of a Quarto Document",
+    "text": "Anatomy of a Quarto Document\n\n\nQuarto documents are composed of 3 basic types of building blocks.\nThe first is the header which includes information about the document, such as its title, author, and the desired output format when the document is rendered. A lot of this information is optional so a header can be pretty short, like the one we see here, or much longer.\nThe second type of building block is text. Text can include special kinds of marks (Markdown) that add styling. This includes hash marks that turn a line of text into a header, asterisks that can create italics, lines of dashes that turn into horizontal lines, and more.\nThe third is code chunks. Code chunks contain R code that can be executed to output results."
+  },
+  {
+    "objectID": "introduction.html#rendering",
+    "href": "introduction.html#rendering",
+    "title": "",
+    "section": "Rendering",
+    "text": "Rendering\nYou will see (“Knit”/“Preview” instead of “Render” in R Markdown documents)\n\n\n\n\n\n\n\n\nThe second way to execute code is to convert the entire Quarto document into HTML (or another target format). For now we’ll stick to HTML because it’s the default and usually what you want. This process of converting Quarto into a target format is called “rendering”.\nTo render a document, click the button that says “Render”. Then in a few moments, a rendered document will be shown.\nIf you are working in R Markdown, like R Notebooks, you’ll see the word “Preview” or “Knit” instead. That also acts to render the Markdown."
+  },
+  {
+    "objectID": "introduction.html#rstudio-online-on-your-desktop",
+    "href": "introduction.html#rstudio-online-on-your-desktop",
+    "title": "",
+    "section": "RStudio: Online / On Your Desktop",
+    "text": "RStudio: Online / On Your Desktop\n\n\n \n\n \n\n\n\n\n\n\nPosit.cloud\nHosted by Posit (in the cloud)\n\nPosit Workbench\nHosted by you, your company, your university, on prem or in the cloud\n\nRStudio Desktop\nInstalled on your computer\n\n\n\nAs I just mentioned, there are several versions of RStudio:\nPosit.Cloud – a version of the RStudio IDE, also now known as Posit, that can be accessed from a web browser. It’s hosted on a server by Posit, the company that makes this software.\nPosit Workbench – a version of the RStudio IDE, also now known as Posit, that can be accessed from a web browser. It’s hosted on a server that could be on premises or in the cloud. You might have an instance of Posit Workbench at your workplace.\nRStudio Desktop – a version of the RStudio IDE that is installed on a personal device like your desktop or laptop. This is what you may want to use after the course to continue learning R and working on R projects. On the course website, there are videos that show you how to install RStudio Desktop on a Mac or Windows computer.\nIt’s important to note that regardless of which version of RStudio that you use, you will be accessing the same general product – there’s no functionality in RStudio Server that you can’t get in RStudio Desktop, or vice versa."
+  },
+  {
+    "objectID": "introduction.html#part-1-introduction",
+    "href": "introduction.html#part-1-introduction",
+    "title": "",
+    "section": "Part 1: Introduction",
+    "text": "Part 1: Introduction\n\nGood afternoon, everyone! In this session we’re going to cover an introduction to R, RStudio (aka Posit), and R Markdown / Quarto."
+  },
+  {
+    "objectID": "welcome.html#introducing-your-presenters-and-tas",
+    "href": "welcome.html#introducing-your-presenters-and-tas",
+    "title": "",
+    "section": "Introducing your Presenters and TAs!",
+    "text": "Introducing your Presenters and TAs!\nPresenters: Joy Payton and Stephan Kadauke, MD, PhD\nTeaching Assistants:\n\nRose Hartman\n\n\n\n\nWe have several great Teaching Assistants, as well, including the folks whose names you see here. They will be helping learners out one on one, so if you’re struggling, please reach out in chat and one of the TAs will help!\nThe main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.\nWe will have one or two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that’s completely up to you. We won’t record breakout sessions."
+  },
+  {
+    "objectID": "welcome.html#r-101-intro-to-r-for-clinical-data",
+    "href": "welcome.html#r-101-intro-to-r-for-clinical-data",
+    "title": "",
+    "section": "R 101: Intro to R for Clinical Data",
+    "text": "R 101: Intro to R for Clinical Data\n\n[Start at 0:02 past starting time.]\nHello and welcome to R 101. We’re glad you’re here!"
+  },
+  {
+    "objectID": "visualize.html#part-ii-visualize",
+    "href": "visualize.html#part-ii-visualize",
+    "title": "",
+    "section": "Part II: Visualize",
+    "text": "Part II: Visualize\n\nAlright, now let’s go into Data Viz!"
+  },
+  {
+    "objectID": "transform.html#part-iii-transform",
+    "href": "transform.html#part-iii-transform",
+    "title": "",
+    "section": "Part III: Transform",
+    "text": "Part III: Transform\n\nAlright, now let’s go into transforming data!"
+  },
+  {
+    "objectID": "dashboards.html#part-iii-transform",
+    "href": "dashboards.html#part-iii-transform",
+    "title": "",
+    "section": "Part III: Transform",
+    "text": "Part III: Transform"
+  },
+  {
+    "objectID": "dashboards.html#part-iv-dashboards",
+    "href": "dashboards.html#part-iv-dashboards",
+    "title": "",
+    "section": "Part IV: Dashboards",
+    "text": "Part IV: Dashboards"
+  },
+  {
+    "objectID": "dashboards.html#your-turn-1",
+    "href": "dashboards.html#your-turn-1",
+    "title": "",
+    "section": "Your Turn #1",
+    "text": "Your Turn #1\nOpen 04 – Dashboards.Rmd to work with a draft COVID19 flexdashboard. This file will look a little different than your previous Quarto files. Don’t fret – this R Markdown file works the same as Quarto! Do the following:\n\n“Knit” () the document to see what the dashboard looks like. You may need to hit “Try Again” to get the pop up window to work.\nChange the Test Volumes Over Time plot so that it visualizes the fraction of positive tests on a given day. (Hint: map the fill aesthetic to result). Knit the document again and note the change.\nChange the layout from columns to a row orientation. Knit the document again and note the change.\n\nClick “yes”  when you are finished!\n\n\n\n−+\n05:00\n\n\n\n\nOpen 04 – Dashboards.Rmd to work with a draft COVID19 flexdashboard. RStudio will open the file in “Source” mode so this will look a little different than your previous Quarto files. Don’t fret – this R Markdown file works the same as Quarto! Do the following:\nKnit the document to see what the dashboard looks like. You may need to hit “Try Again” if you see a pop-up window.\nChange the Test Volumes Over Time plot so that it visualizes the fraction of positive tests on a given day. (Hint: map the fill aesthetic to result). Knit the document again and note the change. Change the layout from columns to a row orientation. Knit the document again and note the change. Click “yes” when you are finished!"
+  },
+  {
+    "objectID": "dashboards.html#what-next",
+    "href": "dashboards.html#what-next",
+    "title": "",
+    "section": "What Next?",
+    "text": "What Next?\n\nSo this brings us to the end of the workshop! One of the most frequent questions we get is what can I do to keep learning R after the workshop. We have a few suggestions for that."
+  },
+  {
+    "objectID": "dashboards.html#access-your-own-r-and-rstudio",
+    "href": "dashboards.html#access-your-own-r-and-rstudio",
+    "title": "",
+    "section": "Access Your Own R and RStudio!",
+    "text": "Access Your Own R and RStudio!\n\n\n\n\n\n\n\nhttps://arcus.github.io/intro-to-r-for-clinicians-chop\n\nAlso, if you’d like to practice with the materials of the course on your own computer, the course website has instructions on how you can download them."
+  },
+  {
+    "objectID": "dashboards.html#participate-in-tidy-tuesday",
+    "href": "dashboards.html#participate-in-tidy-tuesday",
+    "title": "",
+    "section": "Participate in Tidy Tuesday",
+    "text": "Participate in Tidy Tuesday\n\n\n\n\n\n\nThe aforementioned R4DS community has an initiative known as “Tidy Tuesday” – each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter.\nIf you do end up participating, we’d love to hear about it in the CHOPR slack!\n\n\n\n\nR/Medicine 2023"
+  },
+  {
+    "objectID": "dashboards.html#making-plots-interactive",
+    "href": "dashboards.html#making-plots-interactive",
+    "title": "",
+    "section": "Making Plots Interactive",
+    "text": "Making Plots Interactive\n\nA very common feature that you find in many dashboards and make them more user friendly is to make them interactive – by allowing users to hover over specific places to find out more information, and zoom into the data."
+  },
+  {
+    "objectID": "dashboards.html#plotly-makes-ggplot-interactive",
+    "href": "dashboards.html#plotly-makes-ggplot-interactive",
+    "title": "",
+    "section": "Plotly Makes ggplot Interactive!",
+    "text": "Plotly Makes ggplot Interactive!\nStart with some ordinary ggplot code:\n\nggplot(data = data_frame) +\ngeom_function(mapping = aes(mappings))\n\nSave that as my_plot, then add some plotly magic …\n\n\nmy_plot <- ggplot(data = data_frame) +\ngeom_function(mapping = aes(mappings))\nggplotly(my_plot)\n\n\nPlotly is a package that provides functionality to make ggplots interactive.\nStep 1. Start with the ggplot template for making any kind of plot ** Step 2. Capture the ggplot in an object. For example, here I capture the plot as an object named “my_plot” ** Step 3. Write ggplotly(my_plot)\nAnd under the hood, plotly works by generating HTML and JavaScript code that gets embedded into the dashboard website."
+  },
+  {
+    "objectID": "dashboards.html#your-turn-2",
+    "href": "dashboards.html#your-turn-2",
+    "title": "",
+    "section": "Your Turn #2",
+    "text": "Your Turn #2\nReturn to 04 – Dashboard.Rmd.\nMake the Test Volumes Over Time plot interactive.\nKnit the document again to note the change. Hover over the interactive plots. Note what happens when you click on the various buttons that appear above the plot.\nClick “yes”  when you are finished.\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "dashboards.html#interactive-tables",
+    "href": "dashboards.html#interactive-tables",
+    "title": "",
+    "section": "Interactive Tables",
+    "text": "Interactive Tables\n\nAnother very common element in dashboards are interactive tables."
+  },
+  {
+    "objectID": "dashboards.html#dt-makes-data-frames-interactive",
+    "href": "dashboards.html#dt-makes-data-frames-interactive",
+    "title": "",
+    "section": "DT Makes data frames Interactive!",
+    "text": "DT Makes data frames Interactive!\nStart with a regular data frame:\n\ncovid_testing\n\n\n\nAnd pipe that to datatable() from the DT package:\n\n\n\n\ncovid_testing %>% datatable()\n\n\nWe can use the DT package to turn a data frame into an interactive table.\nThis is even easier than plotly.\nStep 1. Start with the data frame you’d like to show Step 2. Pipe it to the function datatable() which is part of the DT package."
+  },
+  {
+    "objectID": "dashboards.html#your-turn-3",
+    "href": "dashboards.html#your-turn-3",
+    "title": "",
+    "section": "Your Turn #3",
+    "text": "Your Turn #3\nReturn to 04 – Dashboards.Rmd. Let’s try to display a list of positive results in the Details of Positive Test Results area of the plot.\n\nNote that this area currently shows the contents of the covid_testing data frame but doesn’t actually filter for positive results. Add to the pipeline a filter() statement that selects only those rows where the result value is “positive” (Hint: “positive” must be in quotes). Knit () the dashboard and note the change.\nIn order to use the datatable() function, we first need to load the DT package. Add a line to the setup chunk (all the way on top!) to load the DT package.\nNow make the table interactive! Knit () the dashboard and note the change. Click “yes”  when you are finished!\n\n\n\n\n−+\n03:00\n\n\n\n\nReturn to 04 – Dashboards.Rmd. Let’s try to display a list of positive results in the Details of Positive Test Results area of the plot.\nNote that this area currently shows the contents of the covid_testing data frame but doesn’t actually filter for positive results. Add to the pipeline a filter() statement that selects only those rows where the result value is “positive” (Hint: “positive” must be in quotes).\nKnit the dashboard and note the change. In order to use the datatable() function, we first need to load the DT package. Add a line to the setup chunk (all the way on top!) to load the DT package. Now make the table interactive! Knit the dashboard and note the change. Click “yes” when you are finished!"
+  },
+  {
+    "objectID": "dashboards.html#add-styling",
+    "href": "dashboards.html#add-styling",
+    "title": "",
+    "section": "Add Styling",
+    "text": "Add Styling"
+  },
+  {
+    "objectID": "dashboards.html#adding-a-theme",
+    "href": "dashboards.html#adding-a-theme",
+    "title": "",
+    "section": "Adding a Theme",
+    "text": "Adding a Theme\n---\ntitle: \"My Dashboard\"\noutput: \n  flexdashboard::flex_dashboard:\n    orientation: rows\n    theme: cerulean\n---\n\nSee https://rmarkdown.rstudio.com/flexdashboard/using.html#themes\n\n\nUnder the hood, themes use a technology called CSS or cascading style sheets. But all of this is abstracted away, and all you have to do is add a theme definition in the header of the Rmd document.\nThis really becomes useful when your organization has created a CSS style sheet that conforms to brand guidelines; can often find those and directly use in flexdashboard."
+  },
+  {
+    "objectID": "dashboards.html#the-data-analysis-pipeline",
+    "href": "dashboards.html#the-data-analysis-pipeline",
+    "title": "",
+    "section": "The Data Analysis Pipeline",
+    "text": "The Data Analysis Pipeline"
+  },
+  {
+    "objectID": "transform.html#the-data-analysis-pipeline",
+    "href": "transform.html#the-data-analysis-pipeline",
+    "title": "",
+    "section": "The Data Analysis Pipeline",
+    "text": "The Data Analysis Pipeline"
+  },
+  {
+    "objectID": "visualize.html#the-data-analysis-pipeline",
+    "href": "visualize.html#the-data-analysis-pipeline",
+    "title": "",
+    "section": "The Data Analysis Pipeline",
+    "text": "The Data Analysis Pipeline"
+  },
+  {
+    "objectID": "dashboards.html#covid-19-dashboard-hackathon",
+    "href": "dashboards.html#covid-19-dashboard-hackathon",
+    "title": "",
+    "section": "COVID 19 Dashboard Hackathon!",
+    "text": "COVID 19 Dashboard Hackathon!\n\nIn this last exercise of the workshop, we will again send you into breakout rooms. Your TA will share their screen with the COVID19 flexdashboard source code open. The objective is to work as a team to tweak the dashboard using the tools we covered today. In 15 minutes we’ll bring everyone back and take a look at what each group has built!\nRemember: your TA probably isn’t a flexdashboard expert, and there’s only going to be 15 minutes. But there are a couple of improvements you can make with the tools we’ve covered today, for example the style, or you might want to add another graph or table, or add a column to the table, or change the color theme of the graph, or tweak the axis labels to make them more descriptive. Have fun!"
+  },
+  {
+    "objectID": "dashboards.html#recap",
+    "href": "dashboards.html#recap",
+    "title": "",
+    "section": "Recap",
+    "text": "Recap\n\n\n\n\n\n\n\n\nTurn R Markdown documents into interactive dashboards with flexdashboard\n\n\n\n\n\n\n\n\n\n\nTurn ggplot objects into interactive plots with plotly\n\n\n\n\n\n\n\n\n\n\nTurn data frames into interactive tables with DT\n\n\n\nLet’s recap!"
+  },
+  {
+    "objectID": "dashboards.html#what-else",
+    "href": "dashboards.html#what-else",
+    "title": "",
+    "section": "What Else?",
+    "text": "What Else?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSee https://gallery.htmlwidgets.org/\n\n\nOf course we have barely scratched the surface of packages that can help you visualize data in cool, interactive ways. Here is a slide of just a handful of examples of ways you can communicate your findings effectively!"
+  }
+]
