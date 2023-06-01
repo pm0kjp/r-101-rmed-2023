@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "transform.html#part-iii-transform",
+    "href": "transform.html#part-iii-transform",
+    "title": "",
+    "section": "Part III: Transform",
+    "text": "Part III: Transform\n\nAlright, now let’s go into transforming data!"
+  },
+  {
+    "objectID": "transform.html#the-data-analysis-pipeline",
+    "href": "transform.html#the-data-analysis-pipeline",
+    "title": "",
+    "section": "The Data Analysis Pipeline",
+    "text": "The Data Analysis Pipeline"
+  },
+  {
     "objectID": "transform.html#subsetting-data",
     "href": "transform.html#subsetting-data",
     "title": "",
@@ -182,46 +196,11 @@
     "text": "Cheatsheet (more dplyr functions!)\n\n\nRStudio creates and distributes a number of cheatsheets for various purposes. You can find them by clicking in the Help menu in RStudio – try that now! Here’s an image of the dplyr cheatsheet. As you can see, there are lots of other funtions that dplyr offers.\nOther dplyr functions include arrange(), distinct(), group_by() (which is especially helpful when combined with summarize()), and many more!"
   },
   {
-    "objectID": "transform.html#what-next",
-    "href": "transform.html#what-next",
+    "objectID": "index.html#r-101-introduction-to-r-for-clinical-data",
+    "href": "index.html#r-101-introduction-to-r-for-clinical-data",
     "title": "",
-    "section": "What Next?",
-    "text": "What Next?\n\nSo this brings us to the end of the workshop! One of the most frequent questions we get is what can I do to keep learning R after the workshop. We have a few suggestions for that."
-  },
-  {
-    "objectID": "transform.html#access-your-own-r-and-rstudio",
-    "href": "transform.html#access-your-own-r-and-rstudio",
-    "title": "",
-    "section": "Access Your Own R and RStudio!",
-    "text": "Access Your Own R and RStudio!\n\n\n\n\n\n\n\nhttps://arcus.github.io/intro-to-r-for-clinicians-chop\n\nDepending on where in CHOP you work, you might have access to resources that CHQA offers, like Marx or CHOP’s RStudio Connect. If you work in Research at CHOP or if you work outside of CHOP, you may want to download R and RStudio to your own computer. If it’s a work computer, you might have to get IS to install this software for you.\nAlso, if you’d like to practice with the materials of the course on your own computer, the course website has instructions on how you can download them."
-  },
-  {
-    "objectID": "transform.html#chop-r-user-group",
-    "href": "transform.html#chop-r-user-group",
-    "title": "",
-    "section": "CHOP R User Group",
-    "text": "CHOP R User Group\n\n\n\n\nhttps://bit.ly/chopRusers\n\n\n\nThe next thing that we recommend is to become part of a community of practice. The best way to do that is to join the CHOP R User group (which is also open to Penn folks). I can’t overstate the importance of having a place to go to ask for help when you start coding. The CHOP R User group has more than 400 members from all departments.\nThis is great place to network with other Rusers, get help with coding problems, and learn about new packages, webinars, and conferences. If you are CHOP or Penn affiliated, please go to the bit.ly address now and sign up to be part of our mailing list and Slack!\nWe also have semi-regular meetings, and are always looking for new people to present short “lightning talks” about something they’ve been working on, a cool new package they’ve discovered, or really anything related to their experience with R.\nWe welcome talks from a variety of experience levels, so as you continue to get your feet wet with R, consider whether there’s something you’d be open to presenting about! Either way, we hope you join us for our next meeting, which will be shared via the CHOPR email distribution list as well as in our Slack."
-  },
-  {
-    "objectID": "transform.html#participate-in-tidy-tuesday",
-    "href": "transform.html#participate-in-tidy-tuesday",
-    "title": "",
-    "section": "Participate in Tidy Tuesday",
-    "text": "Participate in Tidy Tuesday\n\n\nThe aforementioned R4DS community has an initiative known as “Tidy Tuesday” – each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter.\nIf you do end up participating, we’d love to hear about it in the CHOPR slack!"
-  },
-  {
-    "objectID": "transform.html#participate-in-improve-this-workshop",
-    "href": "transform.html#participate-in-improve-this-workshop",
-    "title": "",
-    "section": "Participate in / Improve This Workshop",
-    "text": "Participate in / Improve This Workshop\n\n\nThis work belongs to the CHOP R User Group, and for those of you who are CHOP or Penn affiliated, we hope you’ll consider helping us. We need additional instructors, TAs, Zoomologists, and other helpers to be able to keep doing this workshop.\nWe’d like to be able to do more advanced workshops, too, but until we get additional helpers, we can’t move forward with that. If you’re interested in participating, please reach out to either of the instructors or to Joy, and we’ll coordinate with you."
-  },
-  {
-    "objectID": "transform.html#thank-you",
-    "href": "transform.html#thank-you",
-    "title": "",
-    "section": "Thank You!",
-    "text": "Thank You!\n\nHelpers\nLearners\n\nPlease, please, fill out the final survey we send out, it’s a concrete way to show your gratitude!\n\nAt this point, I would like to thank all the helpers: instructors, TAs, Zoomologists.\nI’d also like to thank you for your participation!\n** So to give them, and you, a round of virtual applause please click the “yes” button or another reaction button, like the party hat or the clapping hands, one last time!\n\n\n\n\nR/Medicine 2023"
+    "section": "R 101: Introduction to R for Clinical Data",
+    "text": "R 101: Introduction to R for Clinical Data\nPresented by R/Medicine 2023\nSlide decks (click on any title):\n\nWelcome\nPart 1: Introduction\nPart 2: Visualize\nPart 3: Transform\nPart 4: Dashboards\n\n\n\n\nR/Medicine 2023"
   },
   {
     "objectID": "welcome.html#tech-check",
@@ -231,32 +210,18 @@
     "text": "Tech Check\n\nWe suggest using the Chrome web browser.\nIf you haven’t already, please sign up for a free account at https://posit.cloud."
   },
   {
-    "objectID": "welcome.html#todays-presenters",
-    "href": "welcome.html#todays-presenters",
+    "objectID": "welcome.html#r-101-intro-to-r-for-clinical-data",
+    "href": "welcome.html#r-101-intro-to-r-for-clinical-data",
     "title": "",
-    "section": "Today’s Presenters",
-    "text": "Today’s Presenters\n\n\n\n\n\n\n\n\nAkira Di Sandro\n\n\n\n\n\n\nRich Hanna\n\n\n\n\n\n\n\n\nAdya Maddox\n\n\n\n\n\n\nJennifer Uzokwe\n\n\n\n\nToday’s presenters include me, Akira Di Sandro, as well as Rich Hanna, Adya (Uh-dee-ya) Maddox, and Jennifer Uzokwe. We are all R users who have participated in this workshop before, as learners and as TAs, and we decided the time was right to become presenters. If you have a good experience today and want to help make it possible for your colleagues to also attend an R Workshop, we encourage you to consider volunteering next time to be a TA or a presenter!"
+    "section": "R 101: Intro to R for Clinical Data",
+    "text": "R 101: Intro to R for Clinical Data\n\n[Start at 0:02 past starting time.]\nHello and welcome to R 101. We’re glad you’re here!"
   },
   {
-    "objectID": "welcome.html#introducing-the-helpers",
-    "href": "welcome.html#introducing-the-helpers",
+    "objectID": "welcome.html#introducing-your-presenters-and-tas",
+    "href": "welcome.html#introducing-your-presenters-and-tas",
     "title": "",
-    "section": "Introducing the Helpers!",
-    "text": "Introducing the Helpers!\n“Zoomologist” Joy Payton\nTeaching Assistants:\n\nRoni Devassy\nStacy Guzman\nWes Wilson\nJason Xu\nKiley Yeaman\n\nSpecial Thanks to:\n\nStephan Kadauke, MD, PhD, originator of many of these materials.\nOur partners at University of Botswana\n\n\nAnd we’re fortunate to have a number of helpers for the course. Joy Payton is a cofounder of the CHOP R User Group and she leads a group of data educators in CHOP’s Research Institute. Joy is happy to be behind the scenes today helping with our videoconferencing needs. She’ll be looking at and responding to the chat window, so feel free to ask her for help!\nWe have several great Teaching Assistants, as well, including the folks whose names you see here. They will be helping learners out one on one, so if you’re struggling, please reach out in chat and Joy will connect you with a TA and put you in a breakout room so you can get one on one help.\nThese materials were originally developed by Stephan Kadauke. He is an Assistant Professor of Pathology and Laboratory Medicine here at CHOP and co-directs the Cell and Gene Therapy Lab. He is also one of the co-founders of the CHOP R User Group and has been a big advocate for the wider adoption of R at CHOP.\nFinally, we’re very excited to have our international partners from the University of Botswana attend for the second time. Thank you for staying past your normal working hours to participate in this workshop with us!"
-  },
-  {
-    "objectID": "welcome.html#orientation-to-the-technology",
-    "href": "welcome.html#orientation-to-the-technology",
-    "title": "",
-    "section": "Orientation to the Technology",
-    "text": "Orientation to the Technology\n\nAfter several years of pandemic, many of us are very familiar with Zoom and tools like it. Still, let’s briefly go over how we’ll use our technology, which includes Zoom."
-  },
-  {
-    "objectID": "welcome.html#main-session-vs-breakout-rooms",
-    "href": "welcome.html#main-session-vs-breakout-rooms",
-    "title": "",
-    "section": "Main Session vs Breakout Rooms",
-    "text": "Main Session vs Breakout Rooms\n\n\n\n\nWebinar-style\n100+ participants\nMic off\nCamera off\n\n\n\n\nMeeting-style\n10-15 participants / room\nMic on\nCamera optional\n\n\n\n\nThe main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.\n** We will also take advantage of breakout rooms, which are a feature of Zoom that allows more of a meeting-style kind of conferencing. We will use breakout rooms for two purposes: for one, we’ll have a small number of group exercises for which we’ll break you guys up into groups of 10-15, and you’ll have the opportunity to talk to each other. We also encourage you to turn on your camera, if you’re are comfortable, but that’s completely up to you. We won’t record breakout sessions. The other purpose of breakout rooms will be to get you one-on-one help by one of the TAs if you are stuck or have some kind of technical problem."
+    "section": "Introducing your Presenters and TAs!",
+    "text": "Introducing your Presenters and TAs!\nPresenters: Joy Payton and Stephan Kadauke, MD, PhD\nTeaching Assistants:\n\nRose Hartman\n\n\n\n\nWe have several great Teaching Assistants, as well, including the folks whose names you see here. They will be helping learners out one on one, so if you’re struggling, please reach out in chat and one of the TAs will help!\nThe main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.\nWe will have one or two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that’s completely up to you. We won’t record breakout sessions."
   },
   {
     "objectID": "welcome.html#non-verbal-feedback",
@@ -322,6 +287,13 @@
     "text": "Your Turn #2\nMeet and greet! We will send you into breakout rooms, where you will have 10 minutes to meet one of our TAs and some of your fellow participants.\n\nThis brings us to our first breakout session! When the invitation appears to join a breakout room, please go ahead and join.\nFor this exercise, we encourage you to turn on your microphone and camera, if you’re comfortable.\nAt the 10 min mark, we’ll bring everyone back into the main session. Depending on how many participants we have, there may be a lot of you in each break room, so we folks to be mindful of time when you introduce yourself and why you’re in this session.\n\n\n\n\nR/Medicine 2023"
   },
   {
+    "objectID": "introduction.html#part-1-introduction",
+    "href": "introduction.html#part-1-introduction",
+    "title": "",
+    "section": "Part 1: Introduction",
+    "text": "Part 1: Introduction\n\nGood afternoon, everyone! In this session we’re going to cover an introduction to R, RStudio (aka Posit), and R Markdown / Quarto."
+  },
+  {
     "objectID": "introduction.html#getting-started-with-rstudio",
     "href": "introduction.html#getting-started-with-rstudio",
     "title": "",
@@ -334,13 +306,6 @@
     "title": "",
     "section": "RStudio: On the Web and on Your Desktop",
     "text": "RStudio: On the Web and on Your Desktop\n\n\n \n\n \n\n\n\n\n\n\nPosit.cloud\nHosted by Posit (in the cloud)\n\nPosit Workbench\nHosted by you, your company, your university, on prem or in the cloud\n\nRStudio Desktop\nInstalled on your computer\n\n\n\nAs I just mentioned, there are several versions of RStudio:\nPosit.Cloud – a version of the RStudio IDE, also now known as Posit, that can be accessed from a web browser. It’s hosted on a server by Posit, the company that makes this software.\nPosit Workbench – a version of the RStudio IDE, also now known as Posit, that can be accessed from a web browser. It’s hosted on a server that could be on premises or in the cloud. You might have an instance of Posit Workbench at your workplace.\nRStudio Desktop – a version of the RStudio IDE that is installed on a personal device like your desktop or laptop. This is what you may want to use after the course to continue learning R and working on R projects. On the course website, there are videos that show you how to install RStudio Desktop on a Mac or Windows computer.\nIt’s important to note that regardless of which version of RStudio that you use, you will be accessing the same general product – there’s no functionality in RStudio Server that you can’t get in RStudio Desktop, or vice versa."
-  },
-  {
-    "objectID": "introduction.html#whoops",
-    "href": "introduction.html#whoops",
-    "title": "",
-    "section": "Whoops!",
-    "text": "Whoops!\nThere are some small server issues that won’t affect our work today but will create a couple of scary looking messages in your first exercise.\n\nFailed to create bus connection: No such file or directory\nWarning message: In system(“timedatectl”, intern = TRUE) : running command ‘timedatectl’ had status 1\n\n\nSo, Joy asked me to apologize to you all on her behalf. With the latest version of RStudio Workbench, there’s a small error she’s trying to chase down related to synching up the server clock.\nYou’ll see these error messages, probably just one time, and you shouldn’t see these if you work in R on your own computer in the future. It’s a weird artifact of how our server is set up. While these messages may look scary, they won’t affect our work today."
   },
   {
     "objectID": "introduction.html#your-turn-1",
@@ -385,11 +350,11 @@
     "text": "Why Bother With Reproducibility?\n\nCan we redo the analysis with this month’s data?\nWhy do the data in Table 1 not seem to agree with Figure 2?\nWhy did I decide to omit these six samples from my analysis?\n\nYour closest collaborator is you from 6 months ago…\n\nReproducibility doesn’t only help people outside a study understand how things were done. They also help the initial conduct of research as well. Consider the following 3 statements and ask yourself if they sound familiar.\n\nCan we redo the analysis with this month’s data?\nWhy do the data in Table 1 not seem to agree with Figure 2?\nWhy did I decide to omit these six samples from my analysis?\n\nYour closest collaborator is you from 6 months ago…\n… but they don’t answer your emails!\nAdditionally, we’ve already seen how irreproducibility can cause real harm to human subjects, something we all want to avoid."
   },
   {
-    "objectID": "introduction.html#anatomy-of-an-r-markdown-document",
-    "href": "introduction.html#anatomy-of-an-r-markdown-document",
+    "objectID": "introduction.html#anatomy-of-a-quarto-document",
+    "href": "introduction.html#anatomy-of-a-quarto-document",
     "title": "",
-    "section": "Anatomy of an R Markdown document",
-    "text": "Anatomy of an R Markdown document\n\n\nQuarto documents are composed of 3 basic types of building blocks.\nThe first is the header which includes information about the document, such as its title, author, and the desired output format when the document is rendered. A lot of this information is optional so a header can be pretty short, like the one we see here, or much longer.\nThe second type of building block is text. Text can include special kinds of marks (Markdown) that add styling. This includes hash marks that turn a line of text into a header, asterisks that can create italics, lines of dashes that turn into horizontal lines, and more.\nThe third is code chunks. Code chunks contain R code that can be executed to output results."
+    "section": "Anatomy of a Quarto Document",
+    "text": "Anatomy of a Quarto Document\n\n\nQuarto documents are composed of 3 basic types of building blocks.\nThe first is the header which includes information about the document, such as its title, author, and the desired output format when the document is rendered. A lot of this information is optional so a header can be pretty short, like the one we see here, or much longer.\nThe second type of building block is text. Text can include special kinds of marks (Markdown) that add styling. This includes hash marks that turn a line of text into a header, asterisks that can create italics, lines of dashes that turn into horizontal lines, and more.\nThe third is code chunks. Code chunks contain R code that can be executed to output results."
   },
   {
     "objectID": "introduction.html#running-a-single-code-chunk",
@@ -399,11 +364,11 @@
     "text": "Running a Single Code Chunk\n\nCan you see the green “play” button?\nThat’s how you run this chunk!\n\nSo how do you execute the code in the code chunks? There are a couple of ways.\nThe first is to run the code in a single code chunk. And you do this by clicking the green right-pointing triangle on the top right of the chunk. This symbol looks like a “play” button. There are other symbols, too, including one that means “run all the code chunks that came before this one”."
   },
   {
-    "objectID": "introduction.html#rendering-knitting",
-    "href": "introduction.html#rendering-knitting",
+    "objectID": "introduction.html#rendering",
+    "href": "introduction.html#rendering",
     "title": "",
-    "section": "Rendering (“Knitting”)",
-    "text": "Rendering (“Knitting”)\n\n\n\n\n\n\n\n\nThe second way to execute code is to convert the entire R Markdown document into HTML (or another target format). For now we’ll stick to HTML because it’s the default and usually what you want. This process of converting R Markdown into a target format is called “rendering” or “knitting” – the mental model here is that you’re knitting together marked up text, code, and results into a nicely formatted document that you can then present or share with others.\nTo knit a document, click the button that says “Knit” next to a blue ball of yarn on the top left of the Editor pane. Then in a few moments, a rendered document will be shown.\nIf you are working in some forms of R Markdown, like R Notebooks, you’ll see the word “Preview” instead of “Knit”. That also acts to render the Markdown."
+    "section": "Rendering",
+    "text": "Rendering\nYou will see (“Knit”/“Preview” instead of “Render” in R Markdown documents)\n\n\n\n\n\n\n\n\nThe second way to execute code is to convert the entire Quarto document into HTML (or another target format). For now we’ll stick to HTML because it’s the default and usually what you want. This process of converting Quarto into a target format is called “rendering”.\nTo render a document, click the button that says “Render”. Then in a few moments, a rendered document will be shown.\nIf you are working in R Markdown, like R Notebooks, you’ll see the word “Preview” or “Knit” instead. That also acts to render the Markdown."
   },
   {
     "objectID": "introduction.html#your-turn-2",
@@ -551,6 +516,139 @@
     "title": "",
     "section": "R Interface to Python",
     "text": "R Interface to Python\n\n\n\n\n\n```{python}\nimport pandas\ncovid_testing.info()\n```\n\n\n\n\nIn addition to R, R Markdown supports many other programming languages, including Python.\nSo you can mix code chunks written in R with code chunks written in, say, SQL or Python. While we won’t get into the use of other languages in this workshop, it’s useful to be aware of multiple language support, especially for teams in which some users prefer R and others Python.\n\n\n\n\nR/Medicine 2023"
+  },
+  {
+    "objectID": "dashboards.html#part-iv-dashboards",
+    "href": "dashboards.html#part-iv-dashboards",
+    "title": "",
+    "section": "Part IV: Dashboards",
+    "text": "Part IV: Dashboards"
+  },
+  {
+    "objectID": "dashboards.html#the-data-analysis-pipeline",
+    "href": "dashboards.html#the-data-analysis-pipeline",
+    "title": "",
+    "section": "The Data Analysis Pipeline",
+    "text": "The Data Analysis Pipeline"
+  },
+  {
+    "objectID": "dashboards.html#your-turn-1",
+    "href": "dashboards.html#your-turn-1",
+    "title": "",
+    "section": "Your Turn #1",
+    "text": "Your Turn #1\nOpen 04 – Dashboards.Rmd to work with a draft COVID19 flexdashboard. This file will look a little different than your previous Quarto files. Don’t fret – this R Markdown file works the same as Quarto! Do the following:\n\n“Knit” () the document to see what the dashboard looks like. You may need to hit “Try Again” to get the pop up window to work.\nChange the Test Volumes Over Time plot so that it visualizes the fraction of positive tests on a given day. (Hint: map the fill aesthetic to result). Knit the document again and note the change.\nChange the layout from columns to a row orientation. Knit the document again and note the change.\n\nClick “yes”  when you are finished!\n\n\n\n−+\n05:00\n\n\n\n\nOpen 04 – Dashboards.Rmd to work with a draft COVID19 flexdashboard. RStudio will open the file in “Source” mode so this will look a little different than your previous Quarto files. Don’t fret – this R Markdown file works the same as Quarto! Do the following:\nKnit the document to see what the dashboard looks like. You may need to hit “Try Again” if you see a pop-up window.\nChange the Test Volumes Over Time plot so that it visualizes the fraction of positive tests on a given day. (Hint: map the fill aesthetic to result). Knit the document again and note the change. Change the layout from columns to a row orientation. Knit the document again and note the change. Click “yes” when you are finished!"
+  },
+  {
+    "objectID": "dashboards.html#making-plots-interactive",
+    "href": "dashboards.html#making-plots-interactive",
+    "title": "",
+    "section": "Making Plots Interactive",
+    "text": "Making Plots Interactive\n\nA very common feature that you find in many dashboards and make them more user friendly is to make them interactive – by allowing users to hover over specific places to find out more information, and zoom into the data."
+  },
+  {
+    "objectID": "dashboards.html#plotly-makes-ggplot-interactive",
+    "href": "dashboards.html#plotly-makes-ggplot-interactive",
+    "title": "",
+    "section": "Plotly Makes ggplot Interactive!",
+    "text": "Plotly Makes ggplot Interactive!\nStart with some ordinary ggplot code:\n\nggplot(data = data_frame) +\ngeom_function(mapping = aes(mappings))\n\nSave that as my_plot, then add some plotly magic …\n\n\nmy_plot <- ggplot(data = data_frame) +\ngeom_function(mapping = aes(mappings))\nggplotly(my_plot)\n\n\nPlotly is a package that provides functionality to make ggplots interactive.\nStep 1. Start with the ggplot template for making any kind of plot ** Step 2. Capture the ggplot in an object. For example, here I capture the plot as an object named “my_plot” ** Step 3. Write ggplotly(my_plot)\nAnd under the hood, plotly works by generating HTML and JavaScript code that gets embedded into the dashboard website."
+  },
+  {
+    "objectID": "dashboards.html#your-turn-2",
+    "href": "dashboards.html#your-turn-2",
+    "title": "",
+    "section": "Your Turn #2",
+    "text": "Your Turn #2\nReturn to 04 – Dashboard.Rmd.\nMake the Test Volumes Over Time plot interactive.\nKnit the document again to note the change. Hover over the interactive plots. Note what happens when you click on the various buttons that appear above the plot.\nClick “yes”  when you are finished.\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "dashboards.html#interactive-tables",
+    "href": "dashboards.html#interactive-tables",
+    "title": "",
+    "section": "Interactive Tables",
+    "text": "Interactive Tables\n\nAnother very common element in dashboards are interactive tables."
+  },
+  {
+    "objectID": "dashboards.html#dt-makes-data-frames-interactive",
+    "href": "dashboards.html#dt-makes-data-frames-interactive",
+    "title": "",
+    "section": "DT Makes data frames Interactive!",
+    "text": "DT Makes data frames Interactive!\nStart with a regular data frame:\n\ncovid_testing\n\n\n\nAnd pipe that to datatable() from the DT package:\n\n\n\n\ncovid_testing %>% datatable()\n\n\nWe can use the DT package to turn a data frame into an interactive table.\nThis is even easier than plotly.\nStep 1. Start with the data frame you’d like to show Step 2. Pipe it to the function datatable() which is part of the DT package."
+  },
+  {
+    "objectID": "dashboards.html#your-turn-3",
+    "href": "dashboards.html#your-turn-3",
+    "title": "",
+    "section": "Your Turn #3",
+    "text": "Your Turn #3\nReturn to 04 – Dashboards.Rmd. Let’s try to display a list of positive results in the Details of Positive Test Results area of the plot.\n\nNote that this area currently shows the contents of the covid_testing data frame but doesn’t actually filter for positive results. Add to the pipeline a filter() statement that selects only those rows where the result value is “positive” (Hint: “positive” must be in quotes). Knit () the dashboard and note the change.\nIn order to use the datatable() function, we first need to load the DT package. Add a line to the setup chunk (all the way on top!) to load the DT package.\nNow make the table interactive! Knit () the dashboard and note the change. Click “yes”  when you are finished!\n\n\n\n\n−+\n03:00\n\n\n\n\nReturn to 04 – Dashboards.Rmd. Let’s try to display a list of positive results in the Details of Positive Test Results area of the plot.\nNote that this area currently shows the contents of the covid_testing data frame but doesn’t actually filter for positive results. Add to the pipeline a filter() statement that selects only those rows where the result value is “positive” (Hint: “positive” must be in quotes).\nKnit the dashboard and note the change. In order to use the datatable() function, we first need to load the DT package. Add a line to the setup chunk (all the way on top!) to load the DT package. Now make the table interactive! Knit the dashboard and note the change. Click “yes” when you are finished!"
+  },
+  {
+    "objectID": "dashboards.html#add-styling",
+    "href": "dashboards.html#add-styling",
+    "title": "",
+    "section": "Add Styling",
+    "text": "Add Styling"
+  },
+  {
+    "objectID": "dashboards.html#adding-a-theme",
+    "href": "dashboards.html#adding-a-theme",
+    "title": "",
+    "section": "Adding a Theme",
+    "text": "Adding a Theme\n---\ntitle: \"My Dashboard\"\noutput: \n  flexdashboard::flex_dashboard:\n    orientation: rows\n    theme: cerulean\n---\n\nSee https://rmarkdown.rstudio.com/flexdashboard/using.html#themes\n\n\nUnder the hood, themes use a technology called CSS or cascading style sheets. But all of this is abstracted away, and all you have to do is add a theme definition in the header of the Rmd document.\nThis really becomes useful when your organization has created a CSS style sheet that conforms to brand guidelines; can often find those and directly use in flexdashboard."
+  },
+  {
+    "objectID": "dashboards.html#covid-19-dashboard-hackathon",
+    "href": "dashboards.html#covid-19-dashboard-hackathon",
+    "title": "",
+    "section": "COVID 19 Dashboard Hackathon!",
+    "text": "COVID 19 Dashboard Hackathon!\n\nIn this last exercise of the workshop, we will again send you into breakout rooms. Your TA will share their screen with the COVID19 flexdashboard source code open. The objective is to work as a team to tweak the dashboard using the tools we covered today. In 15 minutes we’ll bring everyone back and take a look at what each group has built!\nRemember: your TA probably isn’t a flexdashboard expert, and there’s only going to be 15 minutes. But there are a couple of improvements you can make with the tools we’ve covered today, for example the style, or you might want to add another graph or table, or add a column to the table, or change the color theme of the graph, or tweak the axis labels to make them more descriptive. Have fun!"
+  },
+  {
+    "objectID": "dashboards.html#recap",
+    "href": "dashboards.html#recap",
+    "title": "",
+    "section": "Recap",
+    "text": "Recap\n\n\n\n\n\n\n\n\nTurn R Markdown documents into interactive dashboards with flexdashboard\n\n\n\n\n\n\n\n\n\n\nTurn ggplot objects into interactive plots with plotly\n\n\n\n\n\n\n\n\n\n\nTurn data frames into interactive tables with DT\n\n\n\nLet’s recap!"
+  },
+  {
+    "objectID": "dashboards.html#what-else",
+    "href": "dashboards.html#what-else",
+    "title": "",
+    "section": "What Else?",
+    "text": "What Else?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSee https://gallery.htmlwidgets.org/\n\n\nOf course we have barely scratched the surface of packages that can help you visualize data in cool, interactive ways. Here is a slide of just a handful of examples of ways you can communicate your findings effectively!"
+  },
+  {
+    "objectID": "dashboards.html#what-next",
+    "href": "dashboards.html#what-next",
+    "title": "",
+    "section": "What Next?",
+    "text": "What Next?\n\nSo this brings us to the end of the workshop! One of the most frequent questions we get is what can I do to keep learning R after the workshop. We have a few suggestions for that."
+  },
+  {
+    "objectID": "dashboards.html#access-your-own-r-and-rstudio",
+    "href": "dashboards.html#access-your-own-r-and-rstudio",
+    "title": "",
+    "section": "Access Your Own R and RStudio!",
+    "text": "Access Your Own R and RStudio!\n\n\n\n\n\n\n\nhttps://arcus.github.io/intro-to-r-for-clinicians-chop\n\nAlso, if you’d like to practice with the materials of the course on your own computer, the course website has instructions on how you can download them."
+  },
+  {
+    "objectID": "dashboards.html#participate-in-tidy-tuesday",
+    "href": "dashboards.html#participate-in-tidy-tuesday",
+    "title": "",
+    "section": "Participate in Tidy Tuesday",
+    "text": "Participate in Tidy Tuesday\n\n\n\n\n\n\nThe aforementioned R4DS community has an initiative known as “Tidy Tuesday” – each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter.\nIf you do end up participating, we’d love to hear about it in the CHOPR slack!\n\n\n\n\nR/Medicine 2023"
+  },
+  {
+    "objectID": "visualize.html#part-ii-visualize",
+    "href": "visualize.html#part-ii-visualize",
+    "title": "",
+    "section": "Part II: Visualize",
+    "text": "Part II: Visualize\n\nAlright, now let’s go into Data Viz!"
+  },
+  {
+    "objectID": "visualize.html#the-data-analysis-pipeline",
+    "href": "visualize.html#the-data-analysis-pipeline",
+    "title": "",
+    "section": "The Data Analysis Pipeline",
+    "text": "The Data Analysis Pipeline"
   },
   {
     "objectID": "visualize.html#covid_testing",
@@ -796,215 +894,5 @@
     "title": "",
     "section": "A Grammar for Tables",
     "text": "A Grammar for Tables\n\n\n\n\n\n\nThe gt package provides a grammar create display tables, i.e. tables that you might want to show in a publication or on a summary report. The gtsummary package makes it trivial to generate publication-ready tables from a tidy data frame.\n\n\n\n\nR/Medicine 2023"
-  },
-  {
-    "objectID": "introduction.html#your-turn-1-1",
-    "href": "introduction.html#your-turn-1-1",
-    "title": "",
-    "section": "Your Turn #1",
-    "text": "Your Turn #1\nClick the link in the chat to access the RStudio training environment.\nLog in using your username and password.\nClick “yes” once you see the RStudio panes.\n\nNow it’s your turn to get logged into the RStudio training environment.\nThe link to the training environment is in this morning’s email, but I’m also going to ask Joy to paste the link into the Zoom chat. When you click on this link, it’ll ask you for a username and password. You can find your username and password in an Excel spreadsheet that’s attached to this morning’s reminder email.\nPlease click the “yes” button in the Participants window to let us know you logged in successfully and can see the Rstudio panes. If you have any issues, please let us know in the chat!"
-  },
-  {
-    "objectID": "introduction.html#rendering-knitting-in-r-markdown",
-    "href": "introduction.html#rendering-knitting-in-r-markdown",
-    "title": "",
-    "section": "Rendering (“Knitting” in R Markdown)",
-    "text": "Rendering (“Knitting” in R Markdown)\n\n\n\n\n\n\n\n\nThe second way to execute code is to convert the entire R Markdown document into HTML (or another target format). For now we’ll stick to HTML because it’s the default and usually what you want. This process of converting R Markdown into a target format is called “rendering” or “knitting” – the mental model here is that you’re knitting together marked up text, code, and results into a nicely formatted document that you can then present or share with others.\nTo knit a document, click the button that says “Knit” next to a blue ball of yarn on the top left of the Editor pane. Then in a few moments, a rendered document will be shown.\nIf you are working in some forms of R Markdown, like R Notebooks, you’ll see the word “Preview” instead of “Knit”. That also acts to render the Markdown."
-  },
-  {
-    "objectID": "introduction.html#anatomy-of-a-quarto-document",
-    "href": "introduction.html#anatomy-of-a-quarto-document",
-    "title": "",
-    "section": "Anatomy of a Quarto Document",
-    "text": "Anatomy of a Quarto Document\n\n\nQuarto documents are composed of 3 basic types of building blocks.\nThe first is the header which includes information about the document, such as its title, author, and the desired output format when the document is rendered. A lot of this information is optional so a header can be pretty short, like the one we see here, or much longer.\nThe second type of building block is text. Text can include special kinds of marks (Markdown) that add styling. This includes hash marks that turn a line of text into a header, asterisks that can create italics, lines of dashes that turn into horizontal lines, and more.\nThe third is code chunks. Code chunks contain R code that can be executed to output results."
-  },
-  {
-    "objectID": "introduction.html#rendering",
-    "href": "introduction.html#rendering",
-    "title": "",
-    "section": "Rendering",
-    "text": "Rendering\nYou will see (“Knit”/“Preview” instead of “Render” in R Markdown documents)\n\n\n\n\n\n\n\n\nThe second way to execute code is to convert the entire Quarto document into HTML (or another target format). For now we’ll stick to HTML because it’s the default and usually what you want. This process of converting Quarto into a target format is called “rendering”.\nTo render a document, click the button that says “Render”. Then in a few moments, a rendered document will be shown.\nIf you are working in R Markdown, like R Notebooks, you’ll see the word “Preview” or “Knit” instead. That also acts to render the Markdown."
-  },
-  {
-    "objectID": "introduction.html#rstudio-online-on-your-desktop",
-    "href": "introduction.html#rstudio-online-on-your-desktop",
-    "title": "",
-    "section": "RStudio: Online / On Your Desktop",
-    "text": "RStudio: Online / On Your Desktop\n\n\n \n\n \n\n\n\n\n\n\nPosit.cloud\nHosted by Posit (in the cloud)\n\nPosit Workbench\nHosted by you, your company, your university, on prem or in the cloud\n\nRStudio Desktop\nInstalled on your computer\n\n\n\nAs I just mentioned, there are several versions of RStudio:\nPosit.Cloud – a version of the RStudio IDE, also now known as Posit, that can be accessed from a web browser. It’s hosted on a server by Posit, the company that makes this software.\nPosit Workbench – a version of the RStudio IDE, also now known as Posit, that can be accessed from a web browser. It’s hosted on a server that could be on premises or in the cloud. You might have an instance of Posit Workbench at your workplace.\nRStudio Desktop – a version of the RStudio IDE that is installed on a personal device like your desktop or laptop. This is what you may want to use after the course to continue learning R and working on R projects. On the course website, there are videos that show you how to install RStudio Desktop on a Mac or Windows computer.\nIt’s important to note that regardless of which version of RStudio that you use, you will be accessing the same general product – there’s no functionality in RStudio Server that you can’t get in RStudio Desktop, or vice versa."
-  },
-  {
-    "objectID": "introduction.html#part-1-introduction",
-    "href": "introduction.html#part-1-introduction",
-    "title": "",
-    "section": "Part 1: Introduction",
-    "text": "Part 1: Introduction\n\nGood afternoon, everyone! In this session we’re going to cover an introduction to R, RStudio (aka Posit), and R Markdown / Quarto."
-  },
-  {
-    "objectID": "welcome.html#introducing-your-presenters-and-tas",
-    "href": "welcome.html#introducing-your-presenters-and-tas",
-    "title": "",
-    "section": "Introducing your Presenters and TAs!",
-    "text": "Introducing your Presenters and TAs!\nPresenters: Joy Payton and Stephan Kadauke, MD, PhD\nTeaching Assistants:\n\nRose Hartman\n\n\n\n\nWe have several great Teaching Assistants, as well, including the folks whose names you see here. They will be helping learners out one on one, so if you’re struggling, please reach out in chat and one of the TAs will help!\nThe main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.\nWe will have one or two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that’s completely up to you. We won’t record breakout sessions."
-  },
-  {
-    "objectID": "welcome.html#r-101-intro-to-r-for-clinical-data",
-    "href": "welcome.html#r-101-intro-to-r-for-clinical-data",
-    "title": "",
-    "section": "R 101: Intro to R for Clinical Data",
-    "text": "R 101: Intro to R for Clinical Data\n\n[Start at 0:02 past starting time.]\nHello and welcome to R 101. We’re glad you’re here!"
-  },
-  {
-    "objectID": "visualize.html#part-ii-visualize",
-    "href": "visualize.html#part-ii-visualize",
-    "title": "",
-    "section": "Part II: Visualize",
-    "text": "Part II: Visualize\n\nAlright, now let’s go into Data Viz!"
-  },
-  {
-    "objectID": "transform.html#part-iii-transform",
-    "href": "transform.html#part-iii-transform",
-    "title": "",
-    "section": "Part III: Transform",
-    "text": "Part III: Transform\n\nAlright, now let’s go into transforming data!"
-  },
-  {
-    "objectID": "dashboards.html#part-iii-transform",
-    "href": "dashboards.html#part-iii-transform",
-    "title": "",
-    "section": "Part III: Transform",
-    "text": "Part III: Transform"
-  },
-  {
-    "objectID": "dashboards.html#part-iv-dashboards",
-    "href": "dashboards.html#part-iv-dashboards",
-    "title": "",
-    "section": "Part IV: Dashboards",
-    "text": "Part IV: Dashboards"
-  },
-  {
-    "objectID": "dashboards.html#your-turn-1",
-    "href": "dashboards.html#your-turn-1",
-    "title": "",
-    "section": "Your Turn #1",
-    "text": "Your Turn #1\nOpen 04 – Dashboards.Rmd to work with a draft COVID19 flexdashboard. This file will look a little different than your previous Quarto files. Don’t fret – this R Markdown file works the same as Quarto! Do the following:\n\n“Knit” () the document to see what the dashboard looks like. You may need to hit “Try Again” to get the pop up window to work.\nChange the Test Volumes Over Time plot so that it visualizes the fraction of positive tests on a given day. (Hint: map the fill aesthetic to result). Knit the document again and note the change.\nChange the layout from columns to a row orientation. Knit the document again and note the change.\n\nClick “yes”  when you are finished!\n\n\n\n−+\n05:00\n\n\n\n\nOpen 04 – Dashboards.Rmd to work with a draft COVID19 flexdashboard. RStudio will open the file in “Source” mode so this will look a little different than your previous Quarto files. Don’t fret – this R Markdown file works the same as Quarto! Do the following:\nKnit the document to see what the dashboard looks like. You may need to hit “Try Again” if you see a pop-up window.\nChange the Test Volumes Over Time plot so that it visualizes the fraction of positive tests on a given day. (Hint: map the fill aesthetic to result). Knit the document again and note the change. Change the layout from columns to a row orientation. Knit the document again and note the change. Click “yes” when you are finished!"
-  },
-  {
-    "objectID": "dashboards.html#what-next",
-    "href": "dashboards.html#what-next",
-    "title": "",
-    "section": "What Next?",
-    "text": "What Next?\n\nSo this brings us to the end of the workshop! One of the most frequent questions we get is what can I do to keep learning R after the workshop. We have a few suggestions for that."
-  },
-  {
-    "objectID": "dashboards.html#access-your-own-r-and-rstudio",
-    "href": "dashboards.html#access-your-own-r-and-rstudio",
-    "title": "",
-    "section": "Access Your Own R and RStudio!",
-    "text": "Access Your Own R and RStudio!\n\n\n\n\n\n\n\nhttps://arcus.github.io/intro-to-r-for-clinicians-chop\n\nAlso, if you’d like to practice with the materials of the course on your own computer, the course website has instructions on how you can download them."
-  },
-  {
-    "objectID": "dashboards.html#participate-in-tidy-tuesday",
-    "href": "dashboards.html#participate-in-tidy-tuesday",
-    "title": "",
-    "section": "Participate in Tidy Tuesday",
-    "text": "Participate in Tidy Tuesday\n\n\n\n\n\n\nThe aforementioned R4DS community has an initiative known as “Tidy Tuesday” – each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter.\nIf you do end up participating, we’d love to hear about it in the CHOPR slack!\n\n\n\n\nR/Medicine 2023"
-  },
-  {
-    "objectID": "dashboards.html#making-plots-interactive",
-    "href": "dashboards.html#making-plots-interactive",
-    "title": "",
-    "section": "Making Plots Interactive",
-    "text": "Making Plots Interactive\n\nA very common feature that you find in many dashboards and make them more user friendly is to make them interactive – by allowing users to hover over specific places to find out more information, and zoom into the data."
-  },
-  {
-    "objectID": "dashboards.html#plotly-makes-ggplot-interactive",
-    "href": "dashboards.html#plotly-makes-ggplot-interactive",
-    "title": "",
-    "section": "Plotly Makes ggplot Interactive!",
-    "text": "Plotly Makes ggplot Interactive!\nStart with some ordinary ggplot code:\n\nggplot(data = data_frame) +\ngeom_function(mapping = aes(mappings))\n\nSave that as my_plot, then add some plotly magic …\n\n\nmy_plot <- ggplot(data = data_frame) +\ngeom_function(mapping = aes(mappings))\nggplotly(my_plot)\n\n\nPlotly is a package that provides functionality to make ggplots interactive.\nStep 1. Start with the ggplot template for making any kind of plot ** Step 2. Capture the ggplot in an object. For example, here I capture the plot as an object named “my_plot” ** Step 3. Write ggplotly(my_plot)\nAnd under the hood, plotly works by generating HTML and JavaScript code that gets embedded into the dashboard website."
-  },
-  {
-    "objectID": "dashboards.html#your-turn-2",
-    "href": "dashboards.html#your-turn-2",
-    "title": "",
-    "section": "Your Turn #2",
-    "text": "Your Turn #2\nReturn to 04 – Dashboard.Rmd.\nMake the Test Volumes Over Time plot interactive.\nKnit the document again to note the change. Hover over the interactive plots. Note what happens when you click on the various buttons that appear above the plot.\nClick “yes”  when you are finished.\n\n\n\n−+\n03:00"
-  },
-  {
-    "objectID": "dashboards.html#interactive-tables",
-    "href": "dashboards.html#interactive-tables",
-    "title": "",
-    "section": "Interactive Tables",
-    "text": "Interactive Tables\n\nAnother very common element in dashboards are interactive tables."
-  },
-  {
-    "objectID": "dashboards.html#dt-makes-data-frames-interactive",
-    "href": "dashboards.html#dt-makes-data-frames-interactive",
-    "title": "",
-    "section": "DT Makes data frames Interactive!",
-    "text": "DT Makes data frames Interactive!\nStart with a regular data frame:\n\ncovid_testing\n\n\n\nAnd pipe that to datatable() from the DT package:\n\n\n\n\ncovid_testing %>% datatable()\n\n\nWe can use the DT package to turn a data frame into an interactive table.\nThis is even easier than plotly.\nStep 1. Start with the data frame you’d like to show Step 2. Pipe it to the function datatable() which is part of the DT package."
-  },
-  {
-    "objectID": "dashboards.html#your-turn-3",
-    "href": "dashboards.html#your-turn-3",
-    "title": "",
-    "section": "Your Turn #3",
-    "text": "Your Turn #3\nReturn to 04 – Dashboards.Rmd. Let’s try to display a list of positive results in the Details of Positive Test Results area of the plot.\n\nNote that this area currently shows the contents of the covid_testing data frame but doesn’t actually filter for positive results. Add to the pipeline a filter() statement that selects only those rows where the result value is “positive” (Hint: “positive” must be in quotes). Knit () the dashboard and note the change.\nIn order to use the datatable() function, we first need to load the DT package. Add a line to the setup chunk (all the way on top!) to load the DT package.\nNow make the table interactive! Knit () the dashboard and note the change. Click “yes”  when you are finished!\n\n\n\n\n−+\n03:00\n\n\n\n\nReturn to 04 – Dashboards.Rmd. Let’s try to display a list of positive results in the Details of Positive Test Results area of the plot.\nNote that this area currently shows the contents of the covid_testing data frame but doesn’t actually filter for positive results. Add to the pipeline a filter() statement that selects only those rows where the result value is “positive” (Hint: “positive” must be in quotes).\nKnit the dashboard and note the change. In order to use the datatable() function, we first need to load the DT package. Add a line to the setup chunk (all the way on top!) to load the DT package. Now make the table interactive! Knit the dashboard and note the change. Click “yes” when you are finished!"
-  },
-  {
-    "objectID": "dashboards.html#add-styling",
-    "href": "dashboards.html#add-styling",
-    "title": "",
-    "section": "Add Styling",
-    "text": "Add Styling"
-  },
-  {
-    "objectID": "dashboards.html#adding-a-theme",
-    "href": "dashboards.html#adding-a-theme",
-    "title": "",
-    "section": "Adding a Theme",
-    "text": "Adding a Theme\n---\ntitle: \"My Dashboard\"\noutput: \n  flexdashboard::flex_dashboard:\n    orientation: rows\n    theme: cerulean\n---\n\nSee https://rmarkdown.rstudio.com/flexdashboard/using.html#themes\n\n\nUnder the hood, themes use a technology called CSS or cascading style sheets. But all of this is abstracted away, and all you have to do is add a theme definition in the header of the Rmd document.\nThis really becomes useful when your organization has created a CSS style sheet that conforms to brand guidelines; can often find those and directly use in flexdashboard."
-  },
-  {
-    "objectID": "dashboards.html#the-data-analysis-pipeline",
-    "href": "dashboards.html#the-data-analysis-pipeline",
-    "title": "",
-    "section": "The Data Analysis Pipeline",
-    "text": "The Data Analysis Pipeline"
-  },
-  {
-    "objectID": "transform.html#the-data-analysis-pipeline",
-    "href": "transform.html#the-data-analysis-pipeline",
-    "title": "",
-    "section": "The Data Analysis Pipeline",
-    "text": "The Data Analysis Pipeline"
-  },
-  {
-    "objectID": "visualize.html#the-data-analysis-pipeline",
-    "href": "visualize.html#the-data-analysis-pipeline",
-    "title": "",
-    "section": "The Data Analysis Pipeline",
-    "text": "The Data Analysis Pipeline"
-  },
-  {
-    "objectID": "dashboards.html#covid-19-dashboard-hackathon",
-    "href": "dashboards.html#covid-19-dashboard-hackathon",
-    "title": "",
-    "section": "COVID 19 Dashboard Hackathon!",
-    "text": "COVID 19 Dashboard Hackathon!\n\nIn this last exercise of the workshop, we will again send you into breakout rooms. Your TA will share their screen with the COVID19 flexdashboard source code open. The objective is to work as a team to tweak the dashboard using the tools we covered today. In 15 minutes we’ll bring everyone back and take a look at what each group has built!\nRemember: your TA probably isn’t a flexdashboard expert, and there’s only going to be 15 minutes. But there are a couple of improvements you can make with the tools we’ve covered today, for example the style, or you might want to add another graph or table, or add a column to the table, or change the color theme of the graph, or tweak the axis labels to make them more descriptive. Have fun!"
-  },
-  {
-    "objectID": "dashboards.html#recap",
-    "href": "dashboards.html#recap",
-    "title": "",
-    "section": "Recap",
-    "text": "Recap\n\n\n\n\n\n\n\n\nTurn R Markdown documents into interactive dashboards with flexdashboard\n\n\n\n\n\n\n\n\n\n\nTurn ggplot objects into interactive plots with plotly\n\n\n\n\n\n\n\n\n\n\nTurn data frames into interactive tables with DT\n\n\n\nLet’s recap!"
-  },
-  {
-    "objectID": "dashboards.html#what-else",
-    "href": "dashboards.html#what-else",
-    "title": "",
-    "section": "What Else?",
-    "text": "What Else?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSee https://gallery.htmlwidgets.org/\n\n\nOf course we have barely scratched the surface of packages that can help you visualize data in cool, interactive ways. Here is a slide of just a handful of examples of ways you can communicate your findings effectively!"
   }
 ]

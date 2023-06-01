@@ -1,1 +1,1 @@
-Sitemap: https://quartopub.com/sites/joy-payton-chop/intro-r-workshop/sitemap.xml
+Sitemap: https://quartopub.com/sites/joy-payton-chop/r-101-rmed-2023/sitemap.xml

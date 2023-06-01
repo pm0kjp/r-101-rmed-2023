@@ -7,7 +7,7 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.1.189">
+  <meta name="generator" content="quarto-1.2.269">
 
   <title>index</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -325,27 +325,21 @@
     <div class="slides">
 
 
-<section class="slide level2">
-
-<div class="columns">
-<div class="column" style="width:20%;">
-<p><img data-src="media/chopr_logo.png"></p>
-</div><div class="column" style="width:80%;">
-<p>Introduction to R for Clinical Data</p>
-<p>Presented by the Children’s Hospital of Philadelphia (CHOP) R User Group</p>
-</div>
-</div>
-<p>Slide decks:</p>
+<section id="r-101-introduction-to-r-for-clinical-data" class="slide level2">
+<h2>R 101: Introduction to R for Clinical Data</h2>
+<p>Presented by R/Medicine 2023</p>
+<p>Slide decks (click on any title):</p>
 <ul>
-<li><a href="https://joy-payton-chop.quarto.pub/intro-r-workshop/welcome">Welcome</a></li>
-<li><a href="https://joy-payton-chop.quarto.pub/intro-r-workshop/introduction">Part 1: Introduction</a></li>
-<li><a href="https://joy-payton-chop.quarto.pub/intro-r-workshop/visualize">Part 2: Visualize</a></li>
-<li><a href="https://joy-payton-chop.quarto.pub/intro-r-workshop/transform">Part 3: Transform</a></li>
+<li><a href="https://joy-payton-chop.quarto.pub/r-101-rmed-2023/welcome">Welcome</a></li>
+<li><a href="https://joy-payton-chop.quarto.pub/r-101-rmed-2023/introduction">Part 1: Introduction</a></li>
+<li><a href="https://joy-payton-chop.quarto.pub/r-101-rmed-2023/visualize">Part 2: Visualize</a></li>
+<li><a href="https://joy-payton-chop.quarto.pub/r-101-rmed-2023/transform">Part 3: Transform</a></li>
+<li><a href="https://joy-payton-chop.quarto.pub/r-101-rmed-2023/dashboards">Part 4: Dashboards</a></li>
 </ul>
 
-<p><img src="media/chopr_logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
-<p>Children’s Hospital of Philadelphia (CHOP) R User Group</p>
+
+<img src="media/r_med_logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p>R/Medicine 2023</p>
 </div>
 </section>
     </div>
@@ -597,7 +591,24 @@
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -635,24 +646,42 @@
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>
