@@ -80,3 +80,9 @@ pre code{
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   background-color: #f1f1f1;
 }
+
+:root{
+    --r-link-color: #2858a8;
+    --r-link-color-dark: #14305e;
+    --r-link-color-hover: #3272db;
+}

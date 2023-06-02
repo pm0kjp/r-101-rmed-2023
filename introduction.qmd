@@ -153,7 +153,11 @@ It's important to note that regardless of which version of RStudio that you use,
 
 ## Your Turn #1 {.smaller}
 
-Go to https://posit.cloud/spaces/378122/content/6017155 in your browser.  If you're not already logged in, log in to Posit.cloud.
+Go to <https://posit.cloud/content/6050527> in your browser.  If you're not already logged in, log in to Posit.cloud.
+
+![](media/save_copy.png){.bordered .half fig-align="center"}
+
+You'll see, at the top of your screen, that you are looking at a temporary copy.  Please make a permanent copy of this so that you can work on your own version of this.  Click on "Save a Permanent Copy".
 
 Click "yes" once you see something like the image below.
 ![](media/posit_cloud_example.png){.half .bordered fig-align="center"}
