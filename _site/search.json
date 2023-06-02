@@ -196,6 +196,13 @@
     "text": "Cheatsheet (more dplyr functions!)\n\n\nRStudio creates and distributes a number of cheatsheets for various purposes. You can find them by clicking in the Help menu in RStudio – try that now! Here’s an image of the dplyr cheatsheet. As you can see, there are lots of other funtions that dplyr offers.\nOther dplyr functions include arrange(), distinct(), group_by() (which is especially helpful when combined with summarize()), and many more!"
   },
   {
+    "objectID": "transform.html#next-up-dashboards",
+    "href": "transform.html#next-up-dashboards",
+    "title": "",
+    "section": "Next Up: Dashboards",
+    "text": "Next Up: Dashboards\nOur next topic is:\nPart 4: Dashboards\n\n\n\nR/Medicine 2023"
+  },
+  {
     "objectID": "index.html#r-101-introduction-to-r-for-clinical-data",
     "href": "index.html#r-101-introduction-to-r-for-clinical-data",
     "title": "",
@@ -284,7 +291,14 @@
     "href": "welcome.html#your-turn-2",
     "title": "",
     "section": "Your Turn #2",
-    "text": "Your Turn #2\nMeet and greet! We will send you into breakout rooms, where you will have 10 minutes to meet one of our TAs and some of your fellow participants.\n\nThis brings us to our first breakout session! When the invitation appears to join a breakout room, please go ahead and join.\nFor this exercise, we encourage you to turn on your microphone and camera, if you’re comfortable.\nAt the 10 min mark, we’ll bring everyone back into the main session. Depending on how many participants we have, there may be a lot of you in each break room, so we folks to be mindful of time when you introduce yourself and why you’re in this session.\n\n\n\n\nR/Medicine 2023"
+    "text": "Your Turn #2\nMeet and greet! We will send you into breakout rooms, where you will have 10 minutes to meet one of our TAs and some of your fellow participants.\n\nThis brings us to our first breakout session! When the invitation appears to join a breakout room, please go ahead and join.\nFor this exercise, we encourage you to turn on your microphone and camera, if you’re comfortable.\nAt the 10 min mark, we’ll bring everyone back into the main session. Depending on how many participants we have, there may be a lot of you in each break room, so we folks to be mindful of time when you introduce yourself and why you’re in this session."
+  },
+  {
+    "objectID": "welcome.html#next-up-introduction",
+    "href": "welcome.html#next-up-introduction",
+    "title": "",
+    "section": "Next Up: Introduction",
+    "text": "Next Up: Introduction\nOur next topic is:\nPart 1: Introduction\n\n\n\nR/Medicine 2023"
   },
   {
     "objectID": "introduction.html#part-1-introduction",
@@ -515,7 +529,14 @@
     "href": "introduction.html#r-interface-to-python",
     "title": "",
     "section": "R Interface to Python",
-    "text": "R Interface to Python\n\n\n\n\n\n```{python}\nimport pandas\ncovid_testing.info()\n```\n\n\n\n\nIn addition to R, R Markdown supports many other programming languages, including Python.\nSo you can mix code chunks written in R with code chunks written in, say, SQL or Python. While we won’t get into the use of other languages in this workshop, it’s useful to be aware of multiple language support, especially for teams in which some users prefer R and others Python.\n\n\n\n\nR/Medicine 2023"
+    "text": "R Interface to Python\n\n\n\n\n\n```{python}\nimport pandas\ncovid_testing.info()\n```\n\n\n\n\nIn addition to R, R Markdown supports many other programming languages, including Python.\nSo you can mix code chunks written in R with code chunks written in, say, SQL or Python. While we won’t get into the use of other languages in this workshop, it’s useful to be aware of multiple language support, especially for teams in which some users prefer R and others Python."
+  },
+  {
+    "objectID": "introduction.html#next-up-visualize",
+    "href": "introduction.html#next-up-visualize",
+    "title": "",
+    "section": "Next Up: Visualize",
+    "text": "Next Up: Visualize\nOur next topic is:\nPart 2: Visualize\n\n\n\nR/Medicine 2023"
   },
   {
     "objectID": "dashboards.html#part-iv-dashboards",
@@ -893,6 +914,13 @@
     "href": "visualize.html#a-grammar-for-tables",
     "title": "",
     "section": "A Grammar for Tables",
-    "text": "A Grammar for Tables\n\n\n\n\n\n\nThe gt package provides a grammar create display tables, i.e. tables that you might want to show in a publication or on a summary report. The gtsummary package makes it trivial to generate publication-ready tables from a tidy data frame.\n\n\n\n\nR/Medicine 2023"
+    "text": "A Grammar for Tables\n\n\nThe gt package provides a grammar create display tables, i.e. tables that you might want to show in a publication or on a summary report. The gtsummary package makes it trivial to generate publication-ready tables from a tidy data frame."
+  },
+  {
+    "objectID": "visualize.html#next-up-transform",
+    "href": "visualize.html#next-up-transform",
+    "title": "",
+    "section": "Next Up: Transform",
+    "text": "Next Up: Transform\nOur next topic is:\nPart 3: Transform\n\n\n\nR/Medicine 2023"
   }
 ]

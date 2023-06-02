@@ -820,3 +820,9 @@ In addition to R, R Markdown supports many other programming languages, includin
 
 So you can mix code chunks written in R with code chunks written in, say, SQL or Python. While we won't get into the use of other languages in this workshop, it's useful to be aware of multiple language support, especially for teams in which some users prefer R and others Python.
 :::
+
+## Next Up: Visualize
+
+Our next topic is:
+
+[Part 2: Visualize](https://joy-payton-chop.quarto.pub/r-101-rmed-2023/visualize)

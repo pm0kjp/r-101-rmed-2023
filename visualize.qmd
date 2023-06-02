@@ -779,3 +779,9 @@ The survminer package extends ggplot to make it straightforward to create public
 ::: notes
 The gt package provides a grammar create display tables, i.e. tables that you might want to show in a publication or on a summary report. The gtsummary package makes it trivial to generate publication-ready tables from a tidy data frame.
 :::
+
+## Next Up: Transform
+
+Our next topic is:
+
+[Part 3: Transform](https://joy-payton-chop.quarto.pub/r-101-rmed-2023/transform)

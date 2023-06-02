@@ -551,3 +551,9 @@ Beyond dplyr, there are a number of other [`tidyverse`](https://www.tidyverse.or
 -   `purrr` offers advanced functionality to automate complex data transformations
 -   `dbplyr` allows you to interact with a table inside a database as if it were a data frame
 :::
+
+## Next Up: Dashboards
+
+Our next topic is:
+
+[Part 4: Dashboards](https://joy-payton-chop.quarto.pub/r-101-rmed-2023/dashboards)
