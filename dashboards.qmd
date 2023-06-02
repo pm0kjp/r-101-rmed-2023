@@ -129,24 +129,20 @@ A very common feature that you find in many dashboards and make them more user f
 
 Start with some ordinary ggplot code:
 
-::: {.code-block .small-text}
-ggplot(data = data_frame) +
-
-  geom_function(mapping = aes(mappings))
+::: {.code-block}
+    ggplot(data = data_frame) +
+      geom_function(mapping = aes(mappings))
 :::
 
 Save that as `my_plot`, then add some plotly magic ...
 
-![](media/plotly_logo.png){width="200px"}
-
-
-::: {.code-block .small-text}
-my_plot <- ggplot(data = data_frame) +
-
-  geom_function(mapping = aes(mappings))
-  
-ggplotly(my_plot)
+::: {.code-block}
+    my_plot <- ggplot(data = data_frame) +
+        geom_function(mapping = aes(mappings))
+    ggplotly(my_plot)
 :::
+
+![](media/plotly_logo.png){width="200px"}
 
 ::: notes
 Plotly is a package that provides functionality to make ggplots interactive. 
@@ -372,7 +368,7 @@ Shiny allows you to build full blown web apps with a lot more functionality than
 So this brings us to the end of the workshop! One of the most frequent questions we get is what can I do to keep learning R after the workshop. We have a few suggestions for that.
 :::
 
-## Access Your Own R and RStudio!
+## Access Your Own R and RStudio! {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
@@ -380,11 +376,11 @@ So this brings us to the end of the workshop! One of the most frequent questions
 :::
 
 ::: {.column width="50%"}
-![](media/after_the_course.png)
+Information on how to use these materials in your own computer: <https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023> 
+
 :::
 :::
 
-<https://arcus.github.io/intro-to-r-for-clinicians-chop>
 
 ::: notes
 
@@ -426,6 +422,7 @@ There's also an amazing online community that was borne out of the book that has
 ------
 
 ![](media/rmarkdown_definitive_guide.png)
+
 <https://bookdown.org/yihui/rmarkdown/>
 
 ::: notes
@@ -441,3 +438,10 @@ The aforementioned R4DS community has an initiative known as "Tidy Tuesday" -- e
 
 If you do end up participating, we'd love to hear about it in the CHOPR slack!
 :::
+
+## Thank You! {.smaller}
+
+Thanks to all our helpers and to all of you!
+
+Again, all the materials you need are at <https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023>, including a link to these slides.
+

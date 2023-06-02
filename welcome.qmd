@@ -16,14 +16,15 @@ format:
 
 ```{r echo = FALSE}
 library(countdown)
-
 ```
 
 ## Tech Check {.smaller}
 
 -   We suggest using the Chrome web browser.
--   If you haven't already, please sign up for a **free** account at https://posit.cloud.  
- 
+-   **Important!!** If you haven't already, please sign up for a **free** account at <https://posit.cloud>. We will use this as our platform today. 
+-   (optional) These slides are at <https://joy-payton-chop.quarto.pub/r-101-rmed-2023>
+-   (optional) The GitHub repo for this course is at <https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023>
+
 
 ## R 101: Intro to R for Clinical Data {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
 
@@ -36,18 +37,17 @@ Hello and welcome to R 101. We're glad you're here!
 
 ## Introducing your Presenters and TAs! {.smaller}
 
-Presenters: Joy Payton and Stephan Kadauke, MD, PhD
+Presenters and TAs: 
 
-Teaching Assistants:
-
--   Rose Hartman
--
--
+- Joy Payton
+- Stephan Kadauke, MD, PhD
+- Catalina Canizares
+- Francisco Cardozo
+- Rose Hartman, PhD
 
 ::: notes
 
-
-We have several great Teaching Assistants, as well, including the folks whose names you see here. They will be helping learners out one on one, so if you're struggling, please reach out in chat and one of the TAs will help!
+We have several great Presenters and Teaching Assistants, including the folks whose names you see here. Our TA's will be helping learners out one on one, so if you're struggling, please reach out in chat and one of the TAs will help!
 
 The main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.
 
@@ -102,16 +102,16 @@ I also want to set expectations for help here. If you have a technical problem p
 
 ## Your Turn #1 {background-color="#e3faf1"}
 
-Click the "yes" button (green check) in the Participants window. Then tell us your location (city, country) in the Chat window.
+Click the "yes" button (![](media/yes_button.png){.inline-image height="1em"}) in the Participants window. Then tell us your location (city, country) in the Chat window.
 
 ```{r}
 countdown(minutes = 1, seconds = 00)
 ```
 
 ::: notes
-This brings us to the first interactive exercise! In the "Reactions" section of Zoom, please click on the "yes" button (the green button with a check mark). When you do this, it tells us as presenters that you're there, you're listening, and you're ready to continue.
+This brings us to the first interactive exercise! In the "Reactions" section of Zoom, please click on the "yes" button (![](media/yes_button.png){.inline-image height="1em"}). When you do this, it tells us as presenters that you're there, you're listening, and you're ready to continue.
 
-Also, please tell us who you are! In the chat window, please tell us where you're joining us from.
+Also, please tell us who you are! In the chat window, please tell us where you're joining us from.  And if you haven't already, please take this moment to sign up for a free account at <https://posit.cloud>.
 
 We'll give you about one minute to do this exercise.
 :::

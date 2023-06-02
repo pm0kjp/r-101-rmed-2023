@@ -214,7 +214,7 @@
     "href": "welcome.html#tech-check",
     "title": "",
     "section": "Tech Check",
-    "text": "Tech Check\n\nWe suggest using the Chrome web browser.\nIf you haven’t already, please sign up for a free account at https://posit.cloud."
+    "text": "Tech Check\n\nWe suggest using the Chrome web browser.\nImportant!! If you haven’t already, please sign up for a free account at https://posit.cloud. We will use this as our platform today.\n(optional) These slides are at https://joy-payton-chop.quarto.pub/r-101-rmed-2023\n(optional) The GitHub repo for this course is at https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023"
   },
   {
     "objectID": "welcome.html#r-101-intro-to-r-for-clinical-data",
@@ -228,7 +228,7 @@
     "href": "welcome.html#introducing-your-presenters-and-tas",
     "title": "",
     "section": "Introducing your Presenters and TAs!",
-    "text": "Introducing your Presenters and TAs!\nPresenters: Joy Payton and Stephan Kadauke, MD, PhD\nTeaching Assistants:\n\nRose Hartman\n\n\n\n\nWe have several great Teaching Assistants, as well, including the folks whose names you see here. They will be helping learners out one on one, so if you’re struggling, please reach out in chat and one of the TAs will help!\nThe main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.\nWe will have one or two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that’s completely up to you. We won’t record breakout sessions."
+    "text": "Introducing your Presenters and TAs!\nPresenters and TAs:\n\nJoy Payton\nStephan Kadauke, MD, PhD\nCatalina Canizares\nFrancisco Cardozo\nRose Hartman, PhD\n\n\nWe have several great Presenters and Teaching Assistants, including the folks whose names you see here. Our TA’s will be helping learners out one on one, so if you’re struggling, please reach out in chat and one of the TAs will help!\nThe main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.\nWe will have one or two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that’s completely up to you. We won’t record breakout sessions."
   },
   {
     "objectID": "welcome.html#non-verbal-feedback",
@@ -249,7 +249,7 @@
     "href": "welcome.html#your-turn-1",
     "title": "",
     "section": "Your Turn #1",
-    "text": "Your Turn #1\nClick the “yes” button (green check) in the Participants window. Then tell us your location (city, country) in the Chat window.\n\n\n\n−+\n01:00\n\n\n\n\nThis brings us to the first interactive exercise! In the “Reactions” section of Zoom, please click on the “yes” button (the green button with a check mark). When you do this, it tells us as presenters that you’re there, you’re listening, and you’re ready to continue.\nAlso, please tell us who you are! In the chat window, please tell us where you’re joining us from.\nWe’ll give you about one minute to do this exercise."
+    "text": "Your Turn #1\nClick the “yes” button () in the Participants window. Then tell us your location (city, country) in the Chat window.\n\n\n\n−+\n01:00\n\n\n\n\nThis brings us to the first interactive exercise! In the “Reactions” section of Zoom, please click on the “yes” button (). When you do this, it tells us as presenters that you’re there, you’re listening, and you’re ready to continue.\nAlso, please tell us who you are! In the chat window, please tell us where you’re joining us from. And if you haven’t already, please take this moment to sign up for a free account at https://posit.cloud.\nWe’ll give you about one minute to do this exercise."
   },
   {
     "objectID": "welcome.html#orientation-to-the-course",
@@ -326,7 +326,7 @@
     "href": "introduction.html#your-turn-1",
     "title": "",
     "section": "Your Turn #1",
-    "text": "Your Turn #1\nGo to https://posit.cloud/content/6050527 in your browser. If you’re not already logged in, log in to Posit.cloud.\n\n\n\n\n\nYou’ll see, at the top of your screen, that you are looking at a temporary copy. Please make a permanent copy of this so that you can work on your own version of this. Click on “Save a Permanent Copy”.\nClick “yes” once you see something like the image below. \n\n\n\n−+\n01:00\n\n\n\n\nNow it’s your turn to get logged into Posit.cloud\nPlease click the yes button in zoom to let us know you logged in successfully.\nWe will do our best to get everyone logged in. If you are struggling to log in, please reach out in the chat and we will try to help you.\nIn a course this size, we may not be able to get every participant logged in successfully. If you can’t access the cloud, please reach out via the chat so we can connect you with a TA. If we aren’t able to help with your specific issue, don’t worry, follow along via the slides, the course will still be valuable for you."
+    "text": "Your Turn #1\nGo to https://posit.cloud/content/6050527 in your browser. If you’re not already logged in, log in to Posit.cloud.\n\n\n\n\n\nYou’ll see, at the top of your screen, that you are looking at a temporary copy. Please click on “Save a Permanent Copy”.\nClick “yes” () once you see something like the image below.\n\n\n\n\n\n\n\n\n−+\n01:00\n\n\n\n\nNow it’s your turn to get logged into Posit.cloud and make a copy of the project for yourself, that you can change and save and work with on your own account.\nPlease click the yes () button in zoom to let us know you logged in successfully.\nWe will do our best to get everyone logged in. If you are struggling to log in, please reach out in the chat and we will try to help you.\nIn a course this size, we may not be able to get every participant logged in successfully. If you can’t access the cloud, please reach out via the chat so we can connect you with a TA. If we aren’t able to help with your specific issue, don’t worry, follow along via the slides, the course will still be valuable for you."
   },
   {
     "objectID": "introduction.html#reproducible-data-analysis-and-r-markdown",
@@ -473,7 +473,7 @@
     "href": "introduction.html#your-turn-3",
     "title": "",
     "section": "Your Turn #3",
-    "text": "Your Turn #3\nIn the Files pane, click on the folder exercises.\nOpen the file titled 01 – Introduction.qmd. Instructions for this exercise are in the text of the document.\nClick () when you are done.\n\n\n\n−+\n05:00\n\n\n\n\nOnce again, I want you to go into Posit.cloud, and this time you’ll work with an existing file we’ve placed in the server for your use. You’ll go into the folder called “exercises” and fine the first assignment, called “Introduction”. Go ahead and open that, and read the rest of the instructions there.\nWe’ll give you five minutes for this, and when you’re done, click the “yes” button so we know how folks are doing.\nAfter the timer finishes, do the exercise live so they can see what it looks like…\nI’m going to start by running this code chunk. I can go to the “Run” button at the top right of the Source pane, or I can click the “run” or “play” button on top of the chunk.\nWhen I’m coding, I like to break my code up into chunks of only a few lines of code at a time. That way, if I have to make a change, it’s easy to just run the code I need to re-run, without re-running the whole thing.\nNow, did anything change when I ran this cell? Yes! In the environment pane, a new data object appeared. And I can interact with this object in several ways. I can click the triangle beside the object’s name, or I can click on the object name itself.\nSo, let’s answer the questions. How can I tell how many rows and columns there are? I can look beside the name of the object in my Environment pane and I see a number of observations, which are rows, and a number of variables, which are columns. I can also use the data view that opens up in my source pane here. At the very bottom there’s a count of rows and columns. Did anyone else figure out the answer in a different way?\nWhat about question two? Any ideas? Well, remember that we want our data analysis to be reproducible, so everything we do to the data is written in code. Changing data using point and click isn’t reproducible. That’s an important reason why R doesn’t have a data editing feature using point and click.\nDoes anyone want to put in their answer for number 3? [Correct answers: 4, 107] Great!\nAnd number 4? (865 positive tests, __ in the first 30 days).\nIf I want to check my answers, I can go in the Files pane, click beside the up arrow to go into the parent directory, go down into solutions, and open the solutions for our first assignment."
+    "text": "Your Turn #3\nIn the Files pane, click on the folder exercises.\nOpen the file titled 01 – Introduction.qmd. Instructions for this exercise are in the text of the document.\nClick yes () when you are done.\n\n\n\n−+\n05:00\n\n\n\n\nOnce again, I want you to go into Posit.cloud, and this time you’ll work with an existing file we’ve placed in the server for your use. You’ll go into the folder called “exercises” and fine the first assignment, called “Introduction”. Go ahead and open that, and read the rest of the instructions there.\nWe’ll give you five minutes for this, and when you’re done, click the “yes” button so we know how folks are doing.\nAfter the timer finishes, do the exercise live so they can see what it looks like…\nI’m going to start by running this code chunk. I can go to the “Run” button at the top right of the Source pane, or I can click the “run” or “play” button on top of the chunk.\nWhen I’m coding, I like to break my code up into chunks of only a few lines of code at a time. That way, if I have to make a change, it’s easy to just run the code I need to re-run, without re-running the whole thing.\nNow, did anything change when I ran this cell? Yes! In the environment pane, a new data object appeared. And I can interact with this object in several ways. I can click the triangle beside the object’s name, or I can click on the object name itself.\nSo, let’s answer the questions. How can I tell how many rows and columns there are? I can look beside the name of the object in my Environment pane and I see a number of observations, which are rows, and a number of variables, which are columns. I can also use the data view that opens up in my source pane here. At the very bottom there’s a count of rows and columns. Did anyone else figure out the answer in a different way?\nWhat about question two? Any ideas? Well, remember that we want our data analysis to be reproducible, so everything we do to the data is written in code. Changing data using point and click isn’t reproducible. That’s an important reason why R doesn’t have a data editing feature using point and click.\nDoes anyone want to put in their answer for number 3? [Correct answers: 4, 107] Great!\nAnd number 4? (865 positive tests, __ in the first 30 days).\nIf I want to check my answers, I can go in the Files pane, click beside the up arrow to go into the parent directory, go down into solutions, and open the solutions for our first assignment."
   },
   {
     "objectID": "introduction.html#recap",
@@ -571,7 +571,7 @@
     "href": "dashboards.html#plotly-makes-ggplot-interactive",
     "title": "",
     "section": "Plotly Makes ggplot Interactive!",
-    "text": "Plotly Makes ggplot Interactive!\nStart with some ordinary ggplot code:\n\nggplot(data = data_frame) +\ngeom_function(mapping = aes(mappings))\n\nSave that as my_plot, then add some plotly magic …\n\n\nmy_plot <- ggplot(data = data_frame) +\ngeom_function(mapping = aes(mappings))\nggplotly(my_plot)\n\n\nPlotly is a package that provides functionality to make ggplots interactive.\nStep 1. Start with the ggplot template for making any kind of plot ** Step 2. Capture the ggplot in an object. For example, here I capture the plot as an object named “my_plot” ** Step 3. Write ggplotly(my_plot)\nAnd under the hood, plotly works by generating HTML and JavaScript code that gets embedded into the dashboard website."
+    "text": "Plotly Makes ggplot Interactive!\nStart with some ordinary ggplot code:\n\nggplot(data = data_frame) +\n  geom_function(mapping = aes(mappings))\n\nSave that as my_plot, then add some plotly magic …\n\nmy_plot <- ggplot(data = data_frame) +\n    geom_function(mapping = aes(mappings))\nggplotly(my_plot)\n\n\n\nPlotly is a package that provides functionality to make ggplots interactive.\nStep 1. Start with the ggplot template for making any kind of plot ** Step 2. Capture the ggplot in an object. For example, here I capture the plot as an object named “my_plot” ** Step 3. Write ggplotly(my_plot)\nAnd under the hood, plotly works by generating HTML and JavaScript code that gets embedded into the dashboard website."
   },
   {
     "objectID": "dashboards.html#your-turn-2",
@@ -648,14 +648,14 @@
     "href": "dashboards.html#access-your-own-r-and-rstudio",
     "title": "",
     "section": "Access Your Own R and RStudio!",
-    "text": "Access Your Own R and RStudio!\n\n\n\n\n\n\n\nhttps://arcus.github.io/intro-to-r-for-clinicians-chop\n\nAlso, if you’d like to practice with the materials of the course on your own computer, the course website has instructions on how you can download them."
+    "text": "Access Your Own R and RStudio!\n\n\n\n\nInformation on how to use these materials in your own computer: https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023\n\n\n\nAlso, if you’d like to practice with the materials of the course on your own computer, the course website has instructions on how you can download them."
   },
   {
     "objectID": "dashboards.html#participate-in-tidy-tuesday",
     "href": "dashboards.html#participate-in-tidy-tuesday",
     "title": "",
     "section": "Participate in Tidy Tuesday",
-    "text": "Participate in Tidy Tuesday\n\n\n\n\n\n\nThe aforementioned R4DS community has an initiative known as “Tidy Tuesday” – each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter.\nIf you do end up participating, we’d love to hear about it in the CHOPR slack!\n\n\n\n\nR/Medicine 2023"
+    "text": "Participate in Tidy Tuesday\n\n\nThe aforementioned R4DS community has an initiative known as “Tidy Tuesday” – each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter.\nIf you do end up participating, we’d love to hear about it in the CHOPR slack!"
   },
   {
     "objectID": "visualize.html#part-ii-visualize",
@@ -683,7 +683,7 @@
     "href": "visualize.html#your-turn-1",
     "title": "",
     "section": "Your Turn #1",
-    "text": "Your Turn #1\nConsider the covid_testing data frame.\nWhat do you think a plot would look like in which:\n\nthe x-axis represents pan_day (day of the pandemic), and\nthe y-axis represents the number of tests that were performed on that day?\n\n\n\n\n−+\n01:00\n\n\n\n\nSo now I’m going to ask you to imagine what the following plot would look like.\nSo just take a few seconds and try to visualize this graph in your mind or doodle it on a piece of paper in front of you.\nEverybody have an idea? Click “yes” to let me know to go on!"
+    "text": "Your Turn #1\nConsider the covid_testing data frame.\nWhat do you think a plot would look like in which:\n\nthe x-axis represents pan_day (day of the pandemic), and\nthe y-axis represents the number of tests that were performed on that day?\n\n\n\n\n−+\n01:00\n\n\n\n\nSo now I’m going to ask you to imagine what the following plot would look like.\nSo just take a few seconds and try to visualize this graph in your mind or doodle it on a piece of paper in front of you.\nEverybody have an idea? Click “yes”  to let me know to go on!"
   },
   {
     "objectID": "visualize.html#your-turn-2",
@@ -844,7 +844,7 @@
     "href": "visualize.html#your-turn-6",
     "title": "",
     "section": "Your Turn #6",
-    "text": "Your Turn #6\nReturn to 02 - Visualize.qmd. Work through the exercises of the section titled “Your Turn 6.”\nClick “yes” when you’re done!\n\n\n\n−+\n05:00\n\n\n\n\nAlright, so you’re going to go back into that same file we were working with earlier, and you’re going to do the second portion of the file. Go ahead and go into your exercises folder and open “02-Visualize.” Follow the instructions, and if you get done early, there’s a bonus section for you which is entirely optional.\nLive Coding\nYou had three tasks to complete. We’ll go through them one at a time.\nYour first task invited you to run a code chunk that creates a histogram and use that code as the basis of a new code chunk that creates a frequency polygon. To do that, I will copy-paste and try typing geom_fre… and discover the geom_freqpoly. Run that, and yep, that’s the right code!\nIn your second task, you were asked to set the color of the line to “blue”. Note that lines have “color” while shapes have “fill” (for the inside) as well as optional “color” (for the edges).\nI simply add color = “blue”, outside the aes parentheses, since this is fixed.\nFinally, you were asked to predict what the output of ggplot code using two different geom functions would be:\nRun that code, and you should see something like this!"
+    "text": "Your Turn #6\nReturn to 02 - Visualize.qmd. Work through the exercises of the section titled “Your Turn 6.”\nClick “yes”  when you’re done!\n\n\n\n−+\n05:00\n\n\n\n\nAlright, so you’re going to go back into that same file we were working with earlier, and you’re going to do the second portion of the file. Go ahead and go into your exercises folder and open “02-Visualize.” Follow the instructions, and if you get done early, there’s a bonus section for you which is entirely optional.\nLive Coding\nYou had three tasks to complete. We’ll go through them one at a time.\nYour first task invited you to run a code chunk that creates a histogram and use that code as the basis of a new code chunk that creates a frequency polygon. To do that, I will copy-paste and try typing geom_fre… and discover the geom_freqpoly. Run that, and yep, that’s the right code!\nIn your second task, you were asked to set the color of the line to “blue”. Note that lines have “color” while shapes have “fill” (for the inside) as well as optional “color” (for the edges).\nI simply add color = “blue”, outside the aes parentheses, since this is fixed.\nFinally, you were asked to predict what the output of ggplot code using two different geom functions would be:\nRun that code, and you should see something like this!"
   },
   {
     "objectID": "visualize.html#recap",
@@ -922,5 +922,12 @@
     "title": "",
     "section": "Next Up: Transform",
     "text": "Next Up: Transform\nOur next topic is:\nPart 3: Transform\n\n\n\nR/Medicine 2023"
+  },
+  {
+    "objectID": "dashboards.html#thank-you",
+    "href": "dashboards.html#thank-you",
+    "title": "",
+    "section": "Thank You!",
+    "text": "Thank You!\nThanks to all our helpers and to all of you!\nAgain, all the materials you need are at https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023, including a link to these slides.\n\n\n\nR/Medicine 2023"
   }
 ]

@@ -56,7 +56,7 @@ So now I'm going to ask you to imagine what the following plot would look like.
 
 So just take a few seconds and try to visualize this graph in your mind or doodle it on a piece of paper in front of you.
 
-Everybody have an idea? Click "yes" to let me know to go on!
+Everybody have an idea? Click "yes" ![](media/yes_button.png){.inline-image height="2em"} to let me know to go on!
 :::
 
 ## Your Turn #2 {.smaller background-color="#e3faf1"}
@@ -110,7 +110,7 @@ R lets you know that when you ask it to draw a histogram, you should probably te
 
 ------------------------------------------------------------------------
 
-![](media/covid_histogram.png){.two-thirds fig-align="center"}
+![](media/covid_histogram.png){fig-align="center"}
 
 ::: code-block
     ggplot(data = covid_testing) + 
@@ -411,7 +411,7 @@ Finally, I'm going to copy and paste, and add a second mapped aesthetic. You can
 
 ------------------------------------------------------------------------
 
-![](media/blue_histogram.png){.two-thirds fig-align="center"}
+![](media/blue_histogram.png){fig-align="center"}
 
     ggplot(data = covid_testing) + 
       geom_histogram(mapping = aes(x = pan_day), fill = "blue")
@@ -443,7 +443,7 @@ To do this in ggplot, you can still use "fill", but:
 
     mapping = aes(x = pan_day, fill = result)
     
-[**Is "fill" inside our outside of aes?**]{.small-text}
+[**Is "fill" inside or outside of mapping?**]{.small-text}
 
 :::
 
@@ -458,7 +458,7 @@ To do this in ggplot, you can still use "fill", but:
 
     mapping = aes(x = pan_day), fill = "blue"
     
-[**Is "fill" inside our outside of aes?**]{.small-text}
+[**Is "fill" inside or outside of mapping?**]{.small-text}
 :::
 :::
 
@@ -502,7 +502,7 @@ In the next exercise, you're going to work hands-on with geom functions.
 
 Return to `02 - Visualize.qmd`. Work through the exercises of the section titled "Your Turn 6."
 
-Click "yes" when you're done!
+Click "yes" ![](media/yes_button.png){.inline-image height="2em"} when you're done!
 
 ```{r}
 countdown(minutes = 5)

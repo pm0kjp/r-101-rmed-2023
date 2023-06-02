@@ -453,7 +453,7 @@
 <p>Click “yes” <img data-src="media/yes_button.png" class="inline-image" style="height:2em"> when you are finished!</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e7c85833" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_9a5f967b" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -494,18 +494,18 @@
 <section id="plotly-makes-ggplot-interactive" class="slide level2 smaller">
 <h2>Plotly Makes ggplot Interactive!</h2>
 <p>Start with some ordinary ggplot code:</p>
-<div class="code-block small-text">
-<p>ggplot(data = data_frame) +</p>
-<p>geom_function(mapping = aes(mappings))</p>
+<div class="code-block">
+<pre><code>ggplot(data = data_frame) +
+  geom_function(mapping = aes(mappings))</code></pre>
 </div>
 <p>Save that as <code>my_plot</code>, then add some plotly magic …</p>
-
-<img data-src="media/plotly_logo.png" width="200" class="r-stretch"><div class="code-block small-text">
-<p>my_plot &lt;- ggplot(data = data_frame) +</p>
-<p>geom_function(mapping = aes(mappings))</p>
-<p>ggplotly(my_plot)</p>
+<div class="code-block">
+<pre><code>my_plot &lt;- ggplot(data = data_frame) +
+    geom_function(mapping = aes(mappings))
+ggplotly(my_plot)</code></pre>
 </div>
-<aside class="notes">
+
+<img data-src="media/plotly_logo.png" width="200" class="r-stretch"><aside class="notes">
 <p>Plotly is a package that provides functionality to make ggplots interactive.</p>
 <p>Step 1. Start with the ggplot template for making any kind of plot ** Step 2. Capture the ggplot in an object. For example, here I capture the plot as an object named “my_plot” ** Step 3. Write ggplotly(my_plot)</p>
 <p>And under the hood, plotly works by generating HTML and JavaScript code that gets embedded into the dashboard website.</p>
@@ -529,7 +529,7 @@
 <p>Click “yes” <img data-src="media/yes_button.png" class="inline-image" style="height:2em"> when you are finished.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_1114b8d2" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_af45c45f" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -593,7 +593,7 @@
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_b278e082" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_131870f9" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -804,16 +804,15 @@ output:
           display:block!important;
       }</style></aside>
 </section>
-<section id="access-your-own-r-and-rstudio" class="slide level2">
+<section id="access-your-own-r-and-rstudio" class="slide level2 smaller">
 <h2>Access Your Own R and RStudio!</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="media/rstudio_desktop.png"></p>
 </div><div class="column" style="width:50%;">
-<p><img data-src="media/after_the_course.png"></p>
+<p>Information on how to use these materials in your own computer: <a href="https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023" class="uri">https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023</a></p>
 </div>
 </div>
-<p><a href="https://arcus.github.io/intro-to-r-for-clinicians-chop" class="uri">https://arcus.github.io/intro-to-r-for-clinicians-chop</a></p>
 <aside class="notes">
 <p>Also, if you’d like to practice with the materials of the course on your own computer, the course website has instructions on how you can download them.</p>
 <style type="text/css">
@@ -861,7 +860,8 @@ output:
 </section>
 <section class="slide level2">
 
-<p><img data-src="media/rmarkdown_definitive_guide.png"> <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a></p>
+
+<img data-src="media/rmarkdown_definitive_guide.png" class="r-stretch"><p><a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a></p>
 <aside class="notes">
 <p>Our very own Rose Hartman is acknowledged in this great book, which will help you master the markdown used in Quarto and R Markdown.</p>
 <style type="text/css">
@@ -878,12 +878,8 @@ output:
 </section>
 <section id="participate-in-tidy-tuesday" class="slide level2">
 <h2>Participate in Tidy Tuesday</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="media/tidy_tuesday.png" class="two-thirds"></p>
-</figure>
-</div>
-<aside class="notes">
+
+<img data-src="media/tidy_tuesday.png" class="two-thirds r-stretch quarto-figure-center"><aside class="notes">
 <p>The aforementioned R4DS community has an initiative known as “Tidy Tuesday” – each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter.</p>
 <p>If you do end up participating, we’d love to hear about it in the CHOPR slack!</p>
 <style type="text/css">
@@ -897,9 +893,14 @@ output:
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="thank-you" class="slide level2 smaller">
+<h2>Thank You!</h2>
+<p>Thanks to all our helpers and to all of you!</p>
+<p>Again, all the materials you need are at <a href="https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023" class="uri">https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023</a>, including a link to these slides.</p>
 
-<p><img src="media/r_med_logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
+
+<img src="media/r_med_logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>R/Medicine 2023</p>
 </div>
 </section>

@@ -157,9 +157,10 @@ Go to <https://posit.cloud/content/6050527> in your browser.  If you're not alre
 
 ![](media/save_copy.png){.bordered .half fig-align="center"}
 
-You'll see, at the top of your screen, that you are looking at a temporary copy.  Please make a permanent copy of this so that you can work on your own version of this.  Click on "Save a Permanent Copy".
+You'll see, at the top of your screen, that you are looking at a temporary copy.  Please click on "Save a Permanent Copy".
 
-Click "yes" once you see something like the image below.
+Click "yes" (![](media/yes_button.png){.inline-image height="2em"}) once you see something like the image below.
+
 ![](media/posit_cloud_example.png){.half .bordered fig-align="center"}
 
 ```{r}
@@ -167,9 +168,9 @@ countdown(minutes = 1, seconds = 0)
 ```
 
 ::: notes
-Now it’s your turn to get logged into Posit.cloud
+Now it’s your turn to get logged into Posit.cloud and make a copy of the project for yourself, that you can change and save and work with on your own account.
 
-Please click the yes button in zoom to let us know you logged in successfully.
+Please click the yes (![](media/yes_button.png){.inline-image height="1em"}) button in zoom to let us know you logged in successfully.
 
 We will do our best to get everyone logged in.  If you are struggling to log in, please reach out in the chat and we will try to help you.
 
@@ -352,7 +353,7 @@ Quarto, like R Markdown before it, is quickly becoming the standard for reproduc
 
 ## Anatomy of a Quarto Document
 
-![](media/quarto_anatomy.png){.two-thirds fig-align="center"}
+![](media/quarto_anatomy.png){fig-align="center"}
 
 ::: notes
 Quarto documents are composed of 3 basic types of building blocks.
@@ -633,7 +634,7 @@ In the Files pane, click on the folder `exercises`.
 
 Open the file titled `01 – Introduction.qmd`. Instructions for this exercise are in the text of the document.
 
-Click (![](media/yes_button.png){.inline-image height="1em"}) when you are done.
+Click yes (![](media/yes_button.png){.inline-image height="2em"}) when you are done.
 
 ```{r}
 countdown(minutes = 5, seconds = 0)
