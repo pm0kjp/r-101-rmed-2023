@@ -22,8 +22,8 @@ library(countdown)
 
 -   We suggest using the Chrome web browser.
 -   **Important!!** If you haven't already, please sign up for a **free** account at <https://posit.cloud>. We will use this as our platform today. 
--   (optional) These slides are at <https://joy-payton-chop.quarto.pub/r-101-rmed-2023>
--   (optional) The GitHub repo for this course is at <https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023>
+-   (optional) These **slides** are at <https://joy-payton-chop.quarto.pub/r-101-rmed-2023>
+-   (optional) The GitHub repo with **exercises and solutions** for this course is at <https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023>
 
 
 ## R 101: Intro to R for Clinical Data {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
@@ -96,13 +96,11 @@ Chat is the way we ask for help here.
 The primary purpose of the Chat window, for this course, is to ask for help if you get stuck with a technical issue. If you don't have a problem that someone is helping you with, you do not need to monitor the chat window to follow the course. I will also occasionally ask you to write the answer to a question in the chat.
 
 Please note that when I'm presenting, I can't also monitor the chat at the same time, so please don't send me private messages. Instead, post to Everyone, briefly describing the problem you have, and you will get help by one of our TAs.
-
-I also want to set expectations for help here. If you have a technical problem please use the chat to get help. But if you have questions about the material, or how to solve a problem you have that's related to what we're talking about at the moment, I encourage you to write it down, and ask during the breaks, or after the workshop.
 :::
 
 ## Your Turn #1 {background-color="#e3faf1"}
 
-Click the "yes" button (![](media/yes_button.png){.inline-image height="1em"}) in the Participants window. Then tell us your location (city, country) in the Chat window.
+Click the "yes" button (![](media/yes_button.png){.inline-image height="1em"}) in the Participants window. Then tell us your location (city, country) in the Chat window.  If you haven't already, also please create an account at https://posit.cloud, or be ready to create a project in your own RStudio from our GitHub repo
 
 ```{r}
 countdown(minutes = 1, seconds = 00)
@@ -137,7 +135,7 @@ The main engines of knowledge generation are visualization and modeling.
 
 Finally, you need to communicate your results.
 
-We will introduce the basics of all of these steps today, with the exception of modeling.
+We will introduce the basics of all of these steps today, with the exception of modeling.  Please note: there is more material in these slides than we have time in this workshop, but I wanted to leave all of this here for you to peruse on your own time.  We will definitely be skipping some of the optional slides today.
 :::
 
 ## Lecture Slides
@@ -190,14 +188,14 @@ We also want people to feel that they can be themselves, especially in breakout 
 
 ## Your Turn #2 {background-color="#e3faf1"}
 
-Meet and greet! We will send you into breakout rooms, where you will have 10 minutes to meet one of our TAs and some of your fellow participants.
+Meet and greet! We will send you into breakout rooms, where you will have a few minutes to meet one of our TAs and some of your fellow participants.
 
 ::: notes
 This brings us to our first breakout session! When the invitation appears to join a breakout room, please go ahead and join.
 
 For this exercise, we encourage you to turn on your microphone and camera, if you're comfortable.
 
-At the 10 min mark, we'll bring everyone back into the main session.  Depending on how many participants we have, there may be a lot of you in each break room, so we folks to be mindful of time when you introduce yourself and why you're in this session.
+At the 10 [or less, make a judgment call] min mark, we'll bring everyone back into the main session.  Depending on how many participants we have, there may be a lot of you in each break room, so we folks to be mindful of time when you introduce yourself and why you're in this session.
 :::
 
 ## Next Up: Introduction

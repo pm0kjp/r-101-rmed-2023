@@ -214,7 +214,7 @@
     "href": "welcome.html#tech-check",
     "title": "",
     "section": "Tech Check",
-    "text": "Tech Check\n\nWe suggest using the Chrome web browser.\nImportant!! If you haven’t already, please sign up for a free account at https://posit.cloud. We will use this as our platform today.\n(optional) These slides are at https://joy-payton-chop.quarto.pub/r-101-rmed-2023\n(optional) The GitHub repo for this course is at https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023"
+    "text": "Tech Check\n\nWe suggest using the Chrome web browser.\nImportant!! If you haven’t already, please sign up for a free account at https://posit.cloud. We will use this as our platform today.\n(optional) These slides are at https://joy-payton-chop.quarto.pub/r-101-rmed-2023\n(optional) The GitHub repo with exercises and solutions for this course is at https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023"
   },
   {
     "objectID": "welcome.html#r-101-intro-to-r-for-clinical-data",
@@ -242,14 +242,14 @@
     "href": "welcome.html#chat-window",
     "title": "",
     "section": "Chat Window",
-    "text": "Chat Window\n\n\n\n\nChat is the way we ask for help here.\n\n\n\nThe primary purpose of the Chat window, for this course, is to ask for help if you get stuck with a technical issue. If you don’t have a problem that someone is helping you with, you do not need to monitor the chat window to follow the course. I will also occasionally ask you to write the answer to a question in the chat.\nPlease note that when I’m presenting, I can’t also monitor the chat at the same time, so please don’t send me private messages. Instead, post to Everyone, briefly describing the problem you have, and you will get help by one of our TAs.\nI also want to set expectations for help here. If you have a technical problem please use the chat to get help. But if you have questions about the material, or how to solve a problem you have that’s related to what we’re talking about at the moment, I encourage you to write it down, and ask during the breaks, or after the workshop."
+    "text": "Chat Window\n\n\n\n\nChat is the way we ask for help here.\n\n\n\nThe primary purpose of the Chat window, for this course, is to ask for help if you get stuck with a technical issue. If you don’t have a problem that someone is helping you with, you do not need to monitor the chat window to follow the course. I will also occasionally ask you to write the answer to a question in the chat.\nPlease note that when I’m presenting, I can’t also monitor the chat at the same time, so please don’t send me private messages. Instead, post to Everyone, briefly describing the problem you have, and you will get help by one of our TAs."
   },
   {
     "objectID": "welcome.html#your-turn-1",
     "href": "welcome.html#your-turn-1",
     "title": "",
     "section": "Your Turn #1",
-    "text": "Your Turn #1\nClick the “yes” button () in the Participants window. Then tell us your location (city, country) in the Chat window.\n\n\n\n−+\n01:00\n\n\n\n\nThis brings us to the first interactive exercise! In the “Reactions” section of Zoom, please click on the “yes” button (). When you do this, it tells us as presenters that you’re there, you’re listening, and you’re ready to continue.\nAlso, please tell us who you are! In the chat window, please tell us where you’re joining us from. And if you haven’t already, please take this moment to sign up for a free account at https://posit.cloud.\nWe’ll give you about one minute to do this exercise."
+    "text": "Your Turn #1\nClick the “yes” button () in the Participants window. Then tell us your location (city, country) in the Chat window. If you haven’t already, also please create an account at https://posit.cloud, or be ready to create a project in your own RStudio from our GitHub repo\n\n\n\n−+\n01:00\n\n\n\n\nThis brings us to the first interactive exercise! In the “Reactions” section of Zoom, please click on the “yes” button (). When you do this, it tells us as presenters that you’re there, you’re listening, and you’re ready to continue.\nAlso, please tell us who you are! In the chat window, please tell us where you’re joining us from. And if you haven’t already, please take this moment to sign up for a free account at https://posit.cloud.\nWe’ll give you about one minute to do this exercise."
   },
   {
     "objectID": "welcome.html#orientation-to-the-course",
@@ -263,7 +263,7 @@
     "href": "welcome.html#the-data-analysis-pipeline",
     "title": "",
     "section": "The Data Analysis Pipeline",
-    "text": "The Data Analysis Pipeline\n\n\nThis workshop is a gentle introduction to data science designed for healthcare professionals and researchers who don’t have a background in programming. This slide shows a high-level conceptual framework of the most important steps of the data analysis process.\nYou always start by importing data and cleaning or “tidying” it up.\nThen you start an iterative process of exploratory data analysis, which usually requires some data transformation.\nThe main engines of knowledge generation are visualization and modeling.\nFinally, you need to communicate your results.\nWe will introduce the basics of all of these steps today, with the exception of modeling."
+    "text": "The Data Analysis Pipeline\n\n\nThis workshop is a gentle introduction to data science designed for healthcare professionals and researchers who don’t have a background in programming. This slide shows a high-level conceptual framework of the most important steps of the data analysis process.\nYou always start by importing data and cleaning or “tidying” it up.\nThen you start an iterative process of exploratory data analysis, which usually requires some data transformation.\nThe main engines of knowledge generation are visualization and modeling.\nFinally, you need to communicate your results.\nWe will introduce the basics of all of these steps today, with the exception of modeling. Please note: there is more material in these slides than we have time in this workshop, but I wanted to leave all of this here for you to peruse on your own time. We will definitely be skipping some of the optional slides today."
   },
   {
     "objectID": "welcome.html#lecture-slides",
@@ -291,7 +291,7 @@
     "href": "welcome.html#your-turn-2",
     "title": "",
     "section": "Your Turn #2",
-    "text": "Your Turn #2\nMeet and greet! We will send you into breakout rooms, where you will have 10 minutes to meet one of our TAs and some of your fellow participants.\n\nThis brings us to our first breakout session! When the invitation appears to join a breakout room, please go ahead and join.\nFor this exercise, we encourage you to turn on your microphone and camera, if you’re comfortable.\nAt the 10 min mark, we’ll bring everyone back into the main session. Depending on how many participants we have, there may be a lot of you in each break room, so we folks to be mindful of time when you introduce yourself and why you’re in this session."
+    "text": "Your Turn #2\nMeet and greet! We will send you into breakout rooms, where you will have a few minutes to meet one of our TAs and some of your fellow participants.\n\nThis brings us to our first breakout session! When the invitation appears to join a breakout room, please go ahead and join.\nFor this exercise, we encourage you to turn on your microphone and camera, if you’re comfortable.\nAt the 10 [or less, make a judgment call] min mark, we’ll bring everyone back into the main session. Depending on how many participants we have, there may be a lot of you in each break room, so we folks to be mindful of time when you introduce yourself and why you’re in this session."
   },
   {
     "objectID": "welcome.html#next-up-introduction",
